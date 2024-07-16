@@ -74,4 +74,8 @@
 <p align="left"> <a href="https://twitter.com/" target="blank"><img
       src="https://img.shields.io/twitter/follow/?logo=twitter&style=for-the-badge" alt="" /></a> </p>
 
+ Advertencia: Proyectos Privados 🛑
+
+Por favor ten en cuenta que algunos de mis proyectos están configurados como privados. Esto significa que el número y la visibilidad de mis contribuciones públicas pueden no reflejar completamente mi actividad y habilidades reales
+
 [MatiasPinho](https://github.com/MatiasPinho)
