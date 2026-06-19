@@ -1,73 +1,96 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="530px" font-size="16px">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Courier New',Courier,monospace" width="980px" height="530px" font-size="15px">
 <style>
-@font-face {
-src: local('Consolas'), local('Consolas Bold');
-font-family: 'ConsolasFallback';
-font-display: swap;
--webkit-size-adjust: 109%;
-size-adjust: 109%;
-}
-.key {fill: #ffa657;}
-.value {fill: #a5d6ff;}
-.addColor {fill: #3fb950;}
-.delColor {fill: #f85149;}
-.cc {fill: #616e7f;}
-text, tspan {white-space: pre;}
+.key  { fill: #de6145; }
+.val  { fill: #cacccc; }
+.dot  { fill: #798186; }
+.sep  { fill: #565d60; }
+.add  { fill: #9fa5a9; }
+.hi   { fill: #d9dbdc; }
+text, tspan { white-space: pre; }
+a { cursor: pointer; }
+a:hover .val { fill: #ffffff; text-decoration: underline; }
 </style>
-<rect width="985px" height="530px" fill="#161b22" rx="15"/>
-<text x="15" y="30" fill="#c9d1d9" class="ascii">
-<tspan x="15" y="30">###*###******%~      ,-:~:-,.    ::=-:~,     </tspan>
-<tspan x="15" y="50">************#*    +%@@@@@@@#*=-.. ,-         </tspan>
-<tspan x="15" y="70">**********##%   =@@%%%@@@@@@@@#+:-,         .</tspan>
-<tspan x="15" y="90">*********##@-  +#+=++#%@@@@@@@@#+~--,.       </tspan>
-<tspan x="15" y="110">####*****##@- =#++++*%%@@@@@@@*+==~:--,.     </tspan>
-<tspan x="15" y="130">####*****##@~,%++++*#%@@@@@@@@#*=~::-,       </tspan>
-<tspan x="15" y="150">####*****##@***++=++##%%#%@@@#+=~::::.       </tspan>
-<tspan x="15" y="170">####*****##%@#*+++*%%##%@@+-                 </tspan>
-<tspan x="15" y="190">###***#**##%%~~:-:~@@*+@@@***#@@@%*~.        </tspan>
-<tspan x="15" y="210">###########%@##**=~%@+#@=~~+*+*-..-~*=, .    </tspan>
-<tspan x="15" y="230">##########%%@%#*+~~##@@:,..,-=*~-,..:+=:,    </tspan>
-<tspan x="15" y="250">%%%%%%####%@@**++***+@+,,,-:~+#@@%**+~::-.   </tspan>
-<tspan x="15" y="270">@@@@@@@@@@@@@+~::::=%@+,..,~*#%@@@@%%#+~:-   </tspan>
-<tspan x="15" y="290">@@@@@@%%%#*+=+=~::=:*@%~-, .=@@@@@@%%#+:-,   </tspan>
-<tspan x="15" y="310">             :#+::+*+@#-:%~,#@@@@@%*#*=-,.   </tspan>
-<tspan x="15" y="330"> ..-+%#+++++~~#+~=*@@@@=  ,~=+#@@@%**=:,.    </tspan>
-<tspan x="15" y="350">~:,.~@@@@@@@@%%*#@@@@%@@:::,--,:*#*+=:-,    .</tspan>
-<tspan x="15" y="370">-,   ,#@@@@@@@@#@@@%%@@#*+~--+#==+~::--.    ,</tspan>
-<tspan x="15" y="390">.     .*@@@@@@@@@##%#@@%+~::~*%*+:. ..     ,-</tspan>
-<tspan x="15" y="410">       -*@@@@%@@@%#@@%%*######+:-.        ,,:</tspan>
-<tspan x="15" y="430">        #@@@@@@%#@@%@@@@@@%*=---.      .,-,-*</tspan>
-<tspan x="15" y="450">:       =%*+~-,,.*@@%@@@@#~-,       -::::--+@</tspan>
-<tspan x="15" y="470">@, ..,,,------::::*@@@@@@+,    .=%%%#*=~:-=@@</tspan>
-<tspan x="15" y="490">~-..,-:~~==========++++=~:--:=%@@@@@@@#=:~*+~</tspan>
-<tspan x="15" y="510">===~:--:~=++**##%%%%*==+****++*#@@@@@*,      </tspan>
+
+<rect width="980px" height="530px" fill="#101315" rx="12"/>
+
+<!-- ── ASCII art ── -->
+<text x="14" y="28" fill="#798186" font-size="15px">
+<tspan x="14" dy="0"  >###*###******%~      ,-:~:-,.    ::=-:~,     </tspan>
+<tspan x="14" dy="20" >************#*    +%@@@@@@@#*=-.. ,-         </tspan>
+<tspan x="14" dy="20" >**********##%   =@@%%%@@@@@@@@#+:-,         .</tspan>
+<tspan x="14" dy="20" >*********##@-  +#+=++#%@@@@@@@@#+~--,.       </tspan>
+<tspan x="14" dy="20" >####*****##@- =#++++*%%@@@@@@@*+==~:--,.     </tspan>
+<tspan x="14" dy="20" >####*****##@~,%++++*#%@@@@@@@@#*=~::-,       </tspan>
+<tspan x="14" dy="20" >####*****##@***++=++##%%#%@@@#+=~::::.       </tspan>
+<tspan x="14" dy="20" >####*****##%@#*+++*%%##%@@+-                 </tspan>
+<tspan x="14" dy="20" >###***#**##%%~~:-:~@@*+@@@***#@@@%*~.        </tspan>
+<tspan x="14" dy="20" >###########%@##**=~%@+#@=~~+*+*-..-~*=, .    </tspan>
+<tspan x="14" dy="20" >##########%%@%#*+~~##@@:,..,-=*~-,..:+=:,    </tspan>
+<tspan x="14" dy="20" >%%%%%%####%@@**++***+@+,,,-:~+#@@%**+~::-.   </tspan>
+<tspan x="14" dy="20" >@@@@@@@@@@@@@+~::::=%@+,..,~*#%@@@@%%#+~:-   </tspan>
+<tspan x="14" dy="20" >@@@@@@%%%#*+=+=~::=:*@%~-, .=@@@@@@%%#+:-,   </tspan>
+<tspan x="14" dy="20" >             :#+::+*+@#-:%~,#@@@@@%*#*=-,.   </tspan>
+<tspan x="14" dy="20" > ..-+%#+++++~~#+~=*@@@@=  ,~=+#@@@%**=:,.    </tspan>
+<tspan x="14" dy="20" >~:,.~@@@@@@@@%%*#@@@@%@@:::,--,:*#*+=:-,    .</tspan>
+<tspan x="14" dy="20" >-,   ,#@@@@@@@@#@@@%%@@#*+~--+#==+~::--.    ,</tspan>
+<tspan x="14" dy="20" >.     .*@@@@@@@@@##%#@@%+~::~*%*+:. ..     ,-</tspan>
+<tspan x="14" dy="20" >       -*@@@@%@@@%#@@%%*######+:-.        ,,: </tspan>
+<tspan x="14" dy="20" >        #@@@@@@%#@@%@@@@@@%*=---.      .,-,-* </tspan>
+<tspan x="14" dy="20" >:       =%*+~-,,.*@@%@@@@#~-,       -::::--+@ </tspan>
+<tspan x="14" dy="20" >@, ..,,,------::::*@@@@@@+,    .=%%%#*=~:-=@@ </tspan>
+<tspan x="14" dy="20" >~-..,-:~~==========++++=~:--:=%@@@@@@@#=:~*+~</tspan>
+<tspan x="14" dy="20" >===~:--:~=++**##%%%%*==+****++*#@@@@@*,      </tspan>
 </text>
-<text x="390" y="30" fill="#c9d1d9">
-<tspan x="390" y="30">matias@pinho</tspan> -———————————————————————————————————————————-—-
-<tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value">Linux, Android</tspan>
-<tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">Buenos Aires, Argentina</tspan>
-<tspan x="390" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ...................... </tspan><tspan class="value">G&amp;L Group</tspan>
-<tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Role</tspan>:<tspan class="cc"> ...................... </tspan><tspan class="value">Frontend Developer</tspan>
-<tspan x="390" y="130" class="cc">. </tspan><tspan class="key">Experience</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">+2 years</tspan>
-<tspan x="390" y="150" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">VSCode</tspan>
-<tspan x="390" y="170" class="cc">. </tspan>
-<tspan x="390" y="190" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">JavaScript, TypeScript, Java</tspan>
-<tspan x="390" y="210" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Markup</tspan>:<tspan class="cc"> .......... </tspan><tspan class="value">HTML, CSS, SASS</tspan>
-<tspan x="390" y="230" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:<tspan class="cc"> ............ </tspan><tspan class="value">Spanish, English</tspan>
-<tspan x="390" y="250" class="cc">. </tspan>
-<tspan x="390" y="270" class="cc">. </tspan><tspan class="key">Stack</tspan>.<tspan class="key">Frontend</tspan>:<tspan class="cc"> ............ </tspan><tspan class="value">React, Angular, Astro, Tailwind</tspan>
-<tspan x="390" y="290" class="cc">. </tspan><tspan class="key">Stack</tspan>.<tspan class="key">Backend</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Node.js, Express, Jest</tspan>
-<tspan x="390" y="310" class="cc">. </tspan><tspan class="key">Stack</tspan>.<tspan class="key">DB</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">MySQL, MongoDB</tspan>
-<tspan x="390" y="330">- Contact</tspan> -——————————————————————————————————————————————-—-
-<tspan x="390" y="350" class="cc">. </tspan><tspan class="key">Email</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">matiaspinho.dev@gmail.com</tspan>
-<tspan x="390" y="370" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">matias-pinho</tspan>
-<tspan x="390" y="390" class="cc">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="cc"> ................. </tspan><tspan class="value">matiaspinho-portfolio.vercel.app</tspan>
-<tspan x="390" y="410" class="cc">. </tspan>
-<tspan x="390" y="430">- GitHub Stats</tspan> -—————————————————————————————————————————-—-
-<tspan x="390" y="450" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">40</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value">2</tspan>} | <tspan class="key">Followers</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">9</tspan>
-<tspan x="390" y="470" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">118</tspan> | <tspan class="key">Stars</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">1</tspan>
-<tspan x="390" y="490" class="cc">. </tspan>
-<tspan x="390" y="510" class="cc">. </tspan>
+
+<!-- ── Info panel ── -->
+<text x="388" y="28" font-size="15px">
+
+<!-- header -->
+<tspan x="388" dy="0"  fill="#d9dbdc" font-weight="bold">matias@pinho</tspan><tspan fill="#565d60"> ─────────────────────────────────────────────</tspan>
+
+<!-- system -->
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">OS</tspan><tspan class="dot">:                   </tspan><tspan class="val">Linux, Android</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Location</tspan><tspan class="dot">:             </tspan><tspan class="val">Buenos Aires, Argentina</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Host</tspan><tspan class="dot">:                 </tspan><tspan class="val">G&amp;L Group</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Role</tspan><tspan class="dot">:                 </tspan><tspan class="val">Frontend Developer</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Experience</tspan><tspan class="dot">:           </tspan><tspan class="val">+2 years</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">IDE</tspan><tspan class="dot">:                  </tspan><tspan class="val">VSCode</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">·</tspan></tspan>
+
+<!-- languages -->
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Programming</tspan><tspan class="dot">:  </tspan><tspan class="val">JavaScript, TypeScript, Java</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Markup</tspan><tspan class="dot">:       </tspan><tspan class="val">HTML, CSS, SASS</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Real</tspan><tspan class="dot">:         </tspan><tspan class="val">Spanish, English</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">·</tspan></tspan>
+
+<!-- stack -->
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">Frontend</tspan><tspan class="dot">:        </tspan><tspan class="val">React, Angular, Astro, Tailwind</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">Backend</tspan><tspan class="dot">:         </tspan><tspan class="val">Node.js, Express, Jest</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">DB</tspan><tspan class="dot">:              </tspan><tspan class="val">MySQL, MongoDB</tspan></tspan>
+
+<!-- contact -->
+<tspan x="388" dy="20"><tspan class="sep">─ Contact </tspan><tspan class="sep">────────────────────────────────────────────</tspan></tspan>
 </text>
+
+<!-- clickable contact links -->
+<text x="388" font-size="15px">
+<a xlink:href="mailto:matiaspinho.dev@gmail.com">
+  <tspan x="388" y="408"><tspan class="dot">· </tspan><tspan class="key">Email</tspan><tspan class="dot">:      </tspan><tspan class="val">matiaspinho.dev@gmail.com</tspan></tspan>
+</a>
+<a xlink:href="https://linkedin.com/in/matias-pinho">
+  <tspan x="388" y="428"><tspan class="dot">· </tspan><tspan class="key">LinkedIn</tspan><tspan class="dot">:   </tspan><tspan class="val">matias-pinho</tspan></tspan>
+</a>
+<a xlink:href="https://matiaspinho-portfolio.vercel.app">
+  <tspan x="388" y="448"><tspan class="dot">· </tspan><tspan class="key">Portfolio</tspan><tspan class="dot">:  </tspan><tspan class="val">matiaspinho-portfolio.vercel.app</tspan></tspan>
+</a>
+</text>
+
+<!-- stats -->
+<text x="388" y="468" font-size="15px">
+<tspan x="388" dy="0" ><tspan class="sep">─ GitHub Stats </tspan><tspan class="sep">─────────────────────────────────────────</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Repos</tspan><tspan class="dot">: </tspan><tspan class="val">40</tspan><tspan class="dot"> {</tspan><tspan class="key">Contributed</tspan><tspan class="dot">: </tspan><tspan class="val">2</tspan><tspan class="dot">} │ </tspan><tspan class="key">Followers</tspan><tspan class="dot">: </tspan><tspan class="val">9</tspan></tspan>
+<tspan x="388" dy="20"><tspan class="dot">· </tspan><tspan class="key">Commits</tspan><tspan class="dot">:              </tspan><tspan class="val">118</tspan><tspan class="dot"> │ </tspan><tspan class="key">Stars</tspan><tspan class="dot">: </tspan><tspan class="val">1</tspan></tspan>
+</text>
+
 </svg>
