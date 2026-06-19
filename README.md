@@ -1,81 +1,73 @@
-<h1 align="center">Hola 👋, Mi nombre es Matias Pinho</h1>
-<h3 align="center">Programador🌟.</h3>
+<div align="center">
+
+![header](https://capsule-render.vercel.app/api?type=waving&color=798186&height=180&section=header&text=Matias+Pinho&fontSize=50&fontColor=cacccc&desc=Frontend+Developer+%E2%80%94+Buenos+Aires%2C+Argentina&descSize=17&descColor=a8adb0&fontAlignY=42&descAlignY=60&animation=fadeIn)
+
+[![typing](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=15&pause=1200&color=798186&center=true&vCenter=true&width=480&lines=React+%7C+TypeScript+%7C+Angular;Design+Systems+%7C+Component+Architecture;Enterprise+%26+Government+Systems)](https://github.com/MatiasPinho)
 
 <br>
 
-<p align="right"> <h3>Profile Views :-</h3> <img src="https://komarev.com/ghpvc/?username=MatiasPinho&label=Profile%20views&color=0e75b6&style=flat"
-    alt="adam-pw" /> 
-  </p>
+[![LinkedIn](https://img.shields.io/badge/linkedin-101315?style=flat-square&logo=linkedin&logoColor=798186)](https://linkedin.com/in/matias-pinho)
+[![Email](https://img.shields.io/badge/email-101315?style=flat-square&logo=gmail&logoColor=798186)](mailto:matiaspinho.dev@gmail.com)
+[![views](https://komarev.com/ghpvc/?username=MatiasPinho&label=views&color=798186&style=flat-square)](https://github.com/MatiasPinho)
+
+</div>
+
+---
 
 <br>
 
-<p><img align="right" src="https://github.com/Adam-pw/Adam-pw/blob/main/animation_500_kxa883sd.gif" alt="adam-pw" /></p>
-
-
-- 🌱 Desarrollador Web, especializado en la creación de productos digitales con énfasis en el desarrollo Front-end. Proporciono soluciones web eficientes y atractivas.
-
-- 📫 Contacta conmigo en **matiaspinho.dev@gmail.com**
-
-
+Frontend Developer con +2 años de experiencia construyendo aplicaciones web en entornos **enterprise y gubernamentales**. Especializado en React, TypeScript y Angular con foco en arquitectura de componentes reutilizables, design systems y buenas prácticas de testing.
 
 <br>
 
-<h3 align="left">Connecta conmigo:</h3>
-<p align="left">
-  <a href="https://www.linkedin.com/in/matias-pinho/" target="blank"><img align="center"
-      src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg"
-      alt="adam pithewan" height="30" width="40" /></a>
-  
+---
+
+## Stack
+
+**Frontend**
+
+![JavaScript](https://img.shields.io/badge/JavaScript-101315?style=flat-square&logo=javascript&logoColor=f7df1e)
+![TypeScript](https://img.shields.io/badge/TypeScript-101315?style=flat-square&logo=typescript&logoColor=3178c6)
+![React](https://img.shields.io/badge/React-101315?style=flat-square&logo=react&logoColor=61dafb)
+![Angular](https://img.shields.io/badge/Angular-101315?style=flat-square&logo=angular&logoColor=dd0031)
+![Astro](https://img.shields.io/badge/Astro-101315?style=flat-square&logo=astro&logoColor=ff5d01)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind+CSS-101315?style=flat-square&logo=tailwindcss&logoColor=38bdf8)
+![SASS](https://img.shields.io/badge/SASS-101315?style=flat-square&logo=sass&logoColor=cc6699)
+![HTML5](https://img.shields.io/badge/HTML5-101315?style=flat-square&logo=html5&logoColor=e34f26)
+![CSS3](https://img.shields.io/badge/CSS3-101315?style=flat-square&logo=css3&logoColor=264de4)
+![Figma](https://img.shields.io/badge/Figma-101315?style=flat-square&logo=figma&logoColor=a259ff)
+
+**Backend / Testing / DB**
+
+![Node.js](https://img.shields.io/badge/Node.js-101315?style=flat-square&logo=node.js&logoColor=339933)
+![Express](https://img.shields.io/badge/Express-101315?style=flat-square&logo=express&logoColor=cacccc)
+![Jest](https://img.shields.io/badge/Jest-101315?style=flat-square&logo=jest&logoColor=c21325)
+![Testing Library](https://img.shields.io/badge/Testing+Library-101315?style=flat-square&logo=testinglibrary&logoColor=e33332)
+![MySQL](https://img.shields.io/badge/MySQL-101315?style=flat-square&logo=mysql&logoColor=4479a1)
+![MongoDB](https://img.shields.io/badge/MongoDB-101315?style=flat-square&logo=mongodb&logoColor=47a248)
+
+**DevOps / Tools**
+
+![Git](https://img.shields.io/badge/Git-101315?style=flat-square&logo=git&logoColor=f05032)
+![GitHub Actions](https://img.shields.io/badge/GitHub+Actions-101315?style=flat-square&logo=githubactions&logoColor=2088ff)
+![OpenShift](https://img.shields.io/badge/OpenShift-101315?style=flat-square&logo=redhatopenshift&logoColor=ee0000)
+![Jira](https://img.shields.io/badge/Jira-101315?style=flat-square&logo=jira&logoColor=0052cc)
+
+---
+
+## Stats
+
+<p align="center">
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=MatiasPinho&show_icons=true&bg_color=101315&text_color=cacccc&title_color=a8adb0&icon_color=798186&border_color=798186&locale=es&count_private=true" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs?username=MatiasPinho&layout=compact&bg_color=101315&text_color=cacccc&title_color=a8adb0&border_color=798186&locale=es" />
 </p>
 
-<br>
-
-<h3 align="left">Lenguajes y herramientas:</h3>
-<p align="left"> 
-  <a href="https://www.w3schools.com/html/" target="_blank" rel="noreferrer"> <img
-      src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
-      alt="html5" width="40" height="40" /> </a> 
-  <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img
-      src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3"
-      width="40" height="40" /> </a> 
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
-    rel="noreferrer"> <img
-      src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-      alt="javascript" width="40" height="40" /> </a> 
-  <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img
-      src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
-      alt="nodejs" width="40" height="40" /> </a> 
-  <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img
-      src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg"
-      alt="mysql" width="40" height="40" /> </a> 
-  <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img
-      src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
-      alt="react" width="40" height="40" /> </a> 
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=MatiasPinho&background=101315&stroke=798186&ring=de6145&fire=de6145&currStreakLabel=a8adb0&currStreakNum=cacccc&sideLabels=798186&sideNums=cacccc&dates=565d60&border=798186" />
 </p>
 
+---
 
-<br>
+> *Algunos proyectos son privados — las contribuciones visibles no reflejan la totalidad de mi actividad.*
 
-<h3>Estadisticas :-</h3>
-<p><img align="center"
-    src="https://github-readme-stats.vercel.app/api/top-langs?username=MatiasPinho&show_icons=true&locale=en&bg_color=0d1117&text_color=ffffff&layout=compact"
-    alt="adam-pw" 
-    bg_color=#808080/></p>
-
-<br>
-
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=MatiasPinho&show_icons=true&locale=en&bg_color=0d1117&text_color=ffffff&repo=convoychat"
-    alt="adam-pw" /></p>
-
-<br>
-
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=MatiasPinho&theme=dark&background=0d1117&date_format=M%20j%5B%2C%20Y%5D" alt="adam-pw" /></p>
-      
-<p align="left"> <a href="https://twitter.com/" target="blank"><img
-      src="https://img.shields.io/twitter/follow/?logo=twitter&style=for-the-badge" alt="" /></a> </p>
-
- Advertencia: Proyectos Privados 🛑
-
-Por favor ten en cuenta que algunos de mis proyectos están configurados como privados. Esto significa que el número y la visibilidad de mis contribuciones públicas pueden no reflejar completamente mi actividad y habilidades reales
-
-[MatiasPinho](https://github.com/MatiasPinho)
+![footer](https://capsule-render.vercel.app/api?type=waving&color=798186&height=100&section=footer)
