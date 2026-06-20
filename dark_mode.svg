@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     font-family="ConsolasFallback,Consolas,monospace" width="985px" height="530px" font-size="16px">
+     font-family="ConsolasFallback,Consolas,monospace" width="985px" height="670px" font-size="16px">
 <style>
 @font-face {
   src: local('Consolas'), local('Consolas Bold');
@@ -15,7 +15,7 @@
 text, tspan { white-space: pre; }
 </style>
 
-<rect width="985px" height="530px" fill="#101315" rx="12"/>
+<rect width="985px" height="670px" fill="#101315" rx="12"/>
 
 <!-- ASCII art — bee -->
 <text x="15" y="30" fill="#de6145">
@@ -44,9 +44,16 @@ text, tspan { white-space: pre; }
 <tspan x="15" y="470">                                             </tspan>
 <tspan x="15" y="490">                                             </tspan>
 <tspan x="15" y="510">                                             </tspan>
+<tspan x="15" y="530">                                             </tspan>
+<tspan x="15" y="550">                                             </tspan>
+<tspan x="15" y="570">                                             </tspan>
+<tspan x="15" y="590">                                             </tspan>
+<tspan x="15" y="610">                                             </tspan>
+<tspan x="15" y="630">                                             </tspan>
+<tspan x="15" y="650">                                             </tspan>
 </text>
 
-<!-- Info panel — static lines -->
+<!-- Info panel -->
 <text x="390" y="30" fill="#cacccc">
 
 <tspan x="390" y="30" font-weight="bold">matias@pinho</tspan><tspan fill="#565d60"> -———————————————————————————————————————————-—-</tspan>
@@ -92,5 +99,34 @@ text, tspan { white-space: pre; }
 <tspan x="390" y="450"><tspan class="dot">. </tspan><tspan class="key">Commits</tspan><tspan class="dot">:................. </tspan><tspan class="val">198</tspan><tspan class="dot"> | </tspan><tspan class="key">Stars</tspan><tspan class="dot">:............. </tspan><tspan class="val">1</tspan></tspan>
 <tspan x="390" y="470"><tspan class="dot">. </tspan></tspan>
 </text>
+
+<!-- Top Languages -->
+<text x="390" font-size="16px" fill="#cacccc">
+<tspan x="390" y="490" fill="#565d60">- Top Languages -—————————————————————————————————————————-—-</tspan>
+<tspan x="390" y="510"><tspan class="dot">. </tspan></tspan>
+<tspan x="390" y="530"><tspan class="dot">. </tspan><tspan class="key">TypeScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓▓▓</tspan><tspan fill="#343d41">░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">52%</tspan></tspan>
+<tspan x="390" y="550"><tspan class="dot">. </tspan><tspan class="key">JavaScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓</tspan><tspan fill="#343d41">░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">31%</tspan></tspan>
+<tspan x="390" y="570"><tspan class="dot">. </tspan><tspan class="key">CSS</tspan><tspan class="dot">:.......... </tspan><tspan class="key">▓</tspan><tspan fill="#343d41">░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">11%</tspan></tspan>
+<tspan x="390" y="590"><tspan class="dot">. </tspan><tspan class="key">HTML</tspan><tspan class="dot">:......... </tspan><tspan class="key">▓</tspan><tspan fill="#343d41">░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">6%</tspan></tspan>
+<tspan x="390" y="610"><tspan class="dot">. </tspan></tspan>
+</text>
+
+<!-- Theme palette -->
+<rect x="390" y="632" width="30" height="14" fill="#101315" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="424" y="632" width="30" height="14" fill="#565d60" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="458" y="632" width="30" height="14" fill="#9fa5a9" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="492" y="632" width="30" height="14" fill="#d9dbdc" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="526" y="632" width="30" height="14" fill="#798186" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="560" y="632" width="30" height="14" fill="#aeaeae" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="594" y="632" width="30" height="14" fill="#707070" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="628" y="632" width="30" height="14" fill="#cbc2be" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="390" y="650" width="30" height="14" fill="#4b4e55" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="424" y="650" width="30" height="14" fill="#de6145" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="458" y="650" width="30" height="14" fill="#343d41" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="492" y="650" width="30" height="14" fill="#c9c2b4" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="526" y="650" width="30" height="14" fill="#5d6367" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="560" y="650" width="30" height="14" fill="#9a9a9a" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="594" y="650" width="30" height="14" fill="#707070" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="628" y="650" width="30" height="14" fill="#a5aeb4" stroke="#1e2427" stroke-width="0.5" rx="2"/>
 
 </svg>

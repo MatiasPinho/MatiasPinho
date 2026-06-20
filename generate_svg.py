@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Regenerate dark_mode.svg with live GitHub stats via the GraphQL API."""
 import json, os, sys, urllib.request
+from collections import defaultdict
 
 USER = "MatiasPinho"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
+
+PALETTE_ROW1 = ["#101315", "#565d60", "#9fa5a9", "#d9dbdc", "#798186", "#aeaeae", "#707070", "#cbc2be"]
+PALETTE_ROW2 = ["#4b4e55", "#de6145", "#343d41", "#c9c2b4", "#5d6367", "#9a9a9a", "#707070", "#a5aeb4"]
 
 
 def gql(query, variables=None):
@@ -31,7 +35,12 @@ def fetch_stats():
           user(login: $login) {
             repositories(first: 100, ownerAffiliations: OWNER, privacy: PUBLIC) {
               totalCount
-              nodes { stargazerCount }
+              nodes {
+                stargazerCount
+                languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+                  edges { size node { name } }
+                }
+              }
             }
             repositoriesContributedTo(
               first: 1
@@ -49,23 +58,87 @@ def fetch_stats():
         {"login": USER},
     )["user"]
 
+    nodes = u["repositories"]["nodes"]
+
+    # Aggregate language byte sizes across all repos
+    lang_sizes = defaultdict(int)
+    for repo in nodes:
+        for edge in repo.get("languages", {}).get("edges", []):
+            lang_sizes[edge["node"]["name"]] += edge["size"]
+
+    total_bytes = sum(lang_sizes.values()) or 1
+    top = sorted(lang_sizes.items(), key=lambda x: -x[1])[:4]
+    langs = [(name, round(size * 100 / total_bytes)) for name, size in top] or [("N/A", 100)]
+
     return dict(
         repos=u["repositories"]["totalCount"],
-        stars=sum(n["stargazerCount"] for n in u["repositories"]["nodes"]),
+        stars=sum(n["stargazerCount"] for n in nodes),
         followers=u["followers"]["totalCount"],
         commits=(
             u["contributionsCollection"]["totalCommitContributions"]
             + u["contributionsCollection"]["restrictedContributionsCount"]
         ),
         contributed=u["repositoriesContributedTo"]["totalCount"],
+        langs=langs,
     )
 
 
-def build_svg(repos, stars, followers, commits, contributed):
+def make_bar(pct):
+    filled = max(0, min(10, round(pct / 10)))
+    return "▓" * filled + "░" * (10 - filled)
+
+
+def lang_tspan(name, pct, y, col):
+    """col = fixed column width for the name field (for alignment)."""
+    dots = "." * (col - len(name) + 3)
+    bar = make_bar(pct)
+    n_filled = len(bar) - len(bar.lstrip("▓"))
+    filled_part = bar[:n_filled]
+    empty_part = bar[n_filled:]
+    return (
+        f'<tspan x="390" y="{y}">'
+        f'<tspan class="dot">. </tspan>'
+        f'<tspan class="key">{name}</tspan>'
+        f'<tspan class="dot">:{dots} </tspan>'
+        f'<tspan class="key">{filled_part}</tspan>'
+        f'<tspan fill="#343d41">{empty_part}</tspan>'
+        f'<tspan class="dot">  </tspan>'
+        f'<tspan class="val">{pct}%</tspan>'
+        f'</tspan>'
+    )
+
+
+def palette_rects():
+    w, h, gap, rx = 30, 14, 4, 2
+    step = w + gap
+    lines = []
+    for row_y, row in ((632, PALETTE_ROW1), (650, PALETTE_ROW2)):
+        for i, color in enumerate(row):
+            x = 390 + i * step
+            lines.append(
+                f'<rect x="{x}" y="{row_y}" width="{w}" height="{h}" '
+                f'fill="{color}" stroke="#1e2427" stroke-width="0.5" rx="{rx}"/>'
+            )
+    return "\n".join(lines)
+
+
+def build_svg(repos, stars, followers, commits, contributed, langs):
+    col = max((len(name) for name, _ in langs), default=8)
+    col = max(col, 8)
+
+    lang_lines = []
+    for idx, (name, pct) in enumerate(langs):
+        lang_lines.append(lang_tspan(name, pct, 530 + idx * 20, col))
+    for idx in range(len(langs), 4):
+        lang_lines.append(f'<tspan x="390" y="{530 + idx * 20}"><tspan class="dot">. </tspan></tspan>')
+
+    lang_block = "\n".join(lang_lines)
+    pal = palette_rects()
+
     return f"""\
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     font-family="ConsolasFallback,Consolas,monospace" width="985px" height="530px" font-size="16px">
+     font-family="ConsolasFallback,Consolas,monospace" width="985px" height="670px" font-size="16px">
 <style>
 @font-face {{
   src: local('Consolas'), local('Consolas Bold');
@@ -80,7 +153,7 @@ def build_svg(repos, stars, followers, commits, contributed):
 text, tspan {{ white-space: pre; }}
 </style>
 
-<rect width="985px" height="530px" fill="#101315" rx="12"/>
+<rect width="985px" height="670px" fill="#101315" rx="12"/>
 
 <!-- ASCII art — bee -->
 <text x="15" y="30" fill="#de6145">
@@ -109,9 +182,16 @@ text, tspan {{ white-space: pre; }}
 <tspan x="15" y="470">                                             </tspan>
 <tspan x="15" y="490">                                             </tspan>
 <tspan x="15" y="510">                                             </tspan>
+<tspan x="15" y="530">                                             </tspan>
+<tspan x="15" y="550">                                             </tspan>
+<tspan x="15" y="570">                                             </tspan>
+<tspan x="15" y="590">                                             </tspan>
+<tspan x="15" y="610">                                             </tspan>
+<tspan x="15" y="630">                                             </tspan>
+<tspan x="15" y="650">                                             </tspan>
 </text>
 
-<!-- Info panel — static lines -->
+<!-- Info panel -->
 <text x="390" y="30" fill="#cacccc">
 
 <tspan x="390" y="30" font-weight="bold">matias@pinho</tspan><tspan fill="#565d60"> -———————————————————————————————————————————-—-</tspan>
@@ -150,13 +230,24 @@ text, tspan {{ white-space: pre; }}
   </a>
 </text>
 
-<!-- GitHub Stats — regenerated by generate_svg.py -->
+<!-- GitHub Stats -->
 <text x="390" font-size="16px" fill="#cacccc">
 <tspan x="390" y="410" fill="#565d60">- GitHub Stats -—————————————————————————————————————————-—-</tspan>
 <tspan x="390" y="430"><tspan class="dot">. </tspan><tspan class="key">Repos</tspan><tspan class="dot">:..... </tspan><tspan class="val">{repos}</tspan><tspan class="dot"> {{</tspan><tspan class="key">Contributed</tspan><tspan class="dot">: </tspan><tspan class="val">{contributed}</tspan><tspan class="dot">}} | </tspan><tspan class="key">Followers</tspan><tspan class="dot">:......... </tspan><tspan class="val">{followers}</tspan></tspan>
 <tspan x="390" y="450"><tspan class="dot">. </tspan><tspan class="key">Commits</tspan><tspan class="dot">:................. </tspan><tspan class="val">{commits}</tspan><tspan class="dot"> | </tspan><tspan class="key">Stars</tspan><tspan class="dot">:............. </tspan><tspan class="val">{stars}</tspan></tspan>
 <tspan x="390" y="470"><tspan class="dot">. </tspan></tspan>
 </text>
+
+<!-- Top Languages -->
+<text x="390" font-size="16px" fill="#cacccc">
+<tspan x="390" y="490" fill="#565d60">- Top Languages -—————————————————————————————————————————-—-</tspan>
+<tspan x="390" y="510"><tspan class="dot">. </tspan></tspan>
+{lang_block}
+<tspan x="390" y="610"><tspan class="dot">. </tspan></tspan>
+</text>
+
+<!-- Theme palette -->
+{pal}
 
 </svg>
 """
@@ -168,7 +259,7 @@ if __name__ == "__main__":
         sys.exit(1)
     stats = fetch_stats()
     svg = build_svg(**stats)
-    out = os.path.join(os.path.dirname(__file__), "dark_mode.svg")
+    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dark_mode.svg")
     with open(out, "w", encoding="utf-8") as f:
         f.write(svg)
     print(f"dark_mode.svg written — {stats}")
