@@ -10,10 +10,9 @@ PALETTE_ROW1 = ["#101315", "#565d60", "#9fa5a9", "#d9dbdc", "#798186", "#aeaeae"
 PALETTE_ROW2 = ["#4b4e55", "#de6145", "#343d41", "#c9c2b4", "#5d6367", "#9a9a9a", "#707070", "#a5aeb4"]
 
 COL1_X = 15    # bee
-COL2_X = 390   # system info + contact
-COL3_X = 900   # github stats + top languages
-SVG_W   = 1200
-SVG_H   = 490
+COL2_X = 395   # system info + contact + github stats + top languages
+SVG_W   = 990
+SVG_H   = 755
 
 
 def gql(query, variables=None):
@@ -111,7 +110,7 @@ def lang_tspan(name, pct, y, col, x):
     )
 
 
-def stat_tspan(label, value, y, x=COL3_X, col=13):
+def stat_tspan(label, value, y, x=COL2_X, col=13):
     dots = "." * (col - len(label))
     return (
         f'<tspan x="{x}" y="{y}">'
@@ -130,7 +129,7 @@ def palette_rects(cx=SVG_W // 2):
     total = (n - 1) * step + w
     x0 = cx - total // 2
     lines = []
-    for row_y, row in ((415, PALETTE_ROW1), (433, PALETTE_ROW2)):
+    for row_y, row in ((690, PALETTE_ROW1), (708, PALETTE_ROW2)):
         for i, color in enumerate(row):
             x = x0 + i * step
             lines.append(
@@ -144,22 +143,22 @@ def build_svg(repos, stars, followers, commits, contributed, langs):
     col = max((len(name) for name, _ in langs), default=8)
     col = max(col, 8)
 
-    # Column 3 — stat tspans
+    # Stats tspans (y=450–530)
     stat_block = "\n".join([
-        stat_tspan("Repos",       repos,       70),
-        stat_tspan("Stars",       stars,       90),
-        stat_tspan("Commits",     commits,     110),
-        stat_tspan("Followers",   followers,   130),
-        stat_tspan("Contributed", contributed, 150),
+        stat_tspan("Repos",       repos,       450),
+        stat_tspan("Stars",       stars,       470),
+        stat_tspan("Commits",     commits,     490),
+        stat_tspan("Followers",   followers,   510),
+        stat_tspan("Contributed", contributed, 530),
     ])
 
-    # Column 3 — language bar tspans
+    # Language bar tspans (y=590–650)
     lang_lines = []
     for idx, (name, pct) in enumerate(langs):
-        lang_lines.append(lang_tspan(name, pct, 210 + idx * 20, col, COL3_X))
+        lang_lines.append(lang_tspan(name, pct, 590 + idx * 20, col, COL2_X))
     for idx in range(len(langs), 4):
         lang_lines.append(
-            f'<tspan x="{COL3_X}" y="{210 + idx * 20}">'
+            f'<tspan x="{COL2_X}" y="{590 + idx * 20}">'
             f'<tspan class="dot">. </tspan></tspan>'
         )
     lang_block = "\n".join(lang_lines)
@@ -252,21 +251,21 @@ text, tspan {{ white-space: pre; }}
   </a>
 </text>
 
-<!-- Column 3 — GitHub stats -->
-<text x="{COL3_X}" font-size="16px" fill="#cacccc">
-<tspan x="{COL3_X}" y="50" fill="#565d60">- GitHub Stats -————————————</tspan>
+<!-- Column 2 — GitHub stats -->
+<text x="{COL2_X}" font-size="16px" fill="#cacccc">
+<tspan x="{COL2_X}" y="430" fill="#565d60">- GitHub Stats -————————————</tspan>
 {stat_block}
-<tspan x="{COL3_X}" y="170"><tspan class="dot">. </tspan></tspan>
-<tspan x="{COL3_X}" y="190" fill="#565d60">- Top Languages -———————————</tspan>
+<tspan x="{COL2_X}" y="550"><tspan class="dot">. </tspan></tspan>
+<tspan x="{COL2_X}" y="570" fill="#565d60">- Top Languages -———————————</tspan>
 {lang_block}
-<tspan x="{COL3_X}" y="290"><tspan class="dot">. </tspan></tspan>
+<tspan x="{COL2_X}" y="670"><tspan class="dot">. </tspan></tspan>
 </text>
 
 <!-- Theme palette -->
 {pal}
 
 <!-- Quote -->
-<text x="{SVG_W // 2}" y="468" text-anchor="middle" font-size="14px" style="white-space:normal"><tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan></text>
+<text x="{SVG_W // 2}" y="730" text-anchor="middle" font-size="14px" style="white-space:normal"><tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan></text>
 
 </svg>
 """
