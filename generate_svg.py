@@ -10,9 +10,10 @@ PALETTE_ROW1 = ["#101315", "#565d60", "#9fa5a9", "#d9dbdc", "#798186", "#aeaeae"
 PALETTE_ROW2 = ["#4b4e55", "#de6145", "#343d41", "#c9c2b4", "#5d6367", "#9a9a9a", "#707070", "#a5aeb4"]
 
 COL1_X = 15    # bee
-COL2_X = 395   # system info + contact + github stats + top languages
-SVG_W   = 990
-SVG_H   = 755
+COL2_X = 390   # system info + contact
+COL3_X = 820   # github stats + top languages
+SVG_W   = 1125
+SVG_H   = 560
 
 
 def gql(query, variables=None):
@@ -110,7 +111,7 @@ def lang_tspan(name, pct, y, col, x):
     )
 
 
-def stat_tspan(label, value, y, x=COL2_X, col=13):
+def stat_tspan(label, value, y, x=COL3_X, col=13):
     dots = "." * (col - len(label))
     return (
         f'<tspan x="{x}" y="{y}">'
@@ -129,7 +130,7 @@ def palette_rects(cx=SVG_W // 2):
     total = (n - 1) * step + w
     x0 = cx - total // 2
     lines = []
-    for row_y, row in ((690, PALETTE_ROW1), (708, PALETTE_ROW2)):
+    for row_y, row in ((490, PALETTE_ROW1), (508, PALETTE_ROW2)):
         for i, color in enumerate(row):
             x = x0 + i * step
             lines.append(
@@ -143,22 +144,22 @@ def build_svg(repos, stars, followers, commits, contributed, langs):
     col = max((len(name) for name, _ in langs), default=8)
     col = max(col, 8)
 
-    # Stats tspans (y=450–530)
+    # Col3 stats — y=66,88,110,132,154
     stat_block = "\n".join([
-        stat_tspan("Repos",       repos,       450),
-        stat_tspan("Stars",       stars,       470),
-        stat_tspan("Commits",     commits,     490),
-        stat_tspan("Followers",   followers,   510),
-        stat_tspan("Contributed", contributed, 530),
+        stat_tspan("Repos",       repos,       66),
+        stat_tspan("Stars",       stars,       88),
+        stat_tspan("Commits",     commits,     110),
+        stat_tspan("Followers",   followers,   132),
+        stat_tspan("Contributed", contributed, 154),
     ])
 
-    # Language bar tspans (y=590–650)
+    # Col3 lang bars — y=220,242,264,286
     lang_lines = []
     for idx, (name, pct) in enumerate(langs):
-        lang_lines.append(lang_tspan(name, pct, 590 + idx * 20, col, COL2_X))
+        lang_lines.append(lang_tspan(name, pct, 220 + idx * 22, col, COL3_X))
     for idx in range(len(langs), 4):
         lang_lines.append(
-            f'<tspan x="{COL2_X}" y="{590 + idx * 20}">'
+            f'<tspan x="{COL3_X}" y="{220 + idx * 22}">'
             f'<tspan class="dot">. </tspan></tspan>'
         )
     lang_block = "\n".join(lang_lines)
@@ -168,7 +169,7 @@ def build_svg(repos, stars, followers, commits, contributed, langs):
     return f"""\
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     font-family="ConsolasFallback,Consolas,monospace" width="{SVG_W}px" height="{SVG_H}px" font-size="16px">
+     font-family="ConsolasFallback,Consolas,monospace" width="{SVG_W}px" height="{SVG_H}px" font-size="18px">
 <style>
 @font-face {{
   src: local('Consolas'), local('Consolas Bold');
@@ -212,60 +213,60 @@ text, tspan {{ white-space: pre; }}
 <tspan x="{COL1_X}" y="470">                                             </tspan>
 </text>
 
-<!-- Column 2 — system info -->
-<text x="{COL2_X}" y="30" fill="#cacccc">
+<!-- Column 2 — system info (keys aligned to col=10) -->
+<text x="{COL2_X}" y="22" fill="#cacccc">
 
-<tspan x="{COL2_X}" y="30" font-weight="bold">matias@pinho</tspan><tspan fill="#565d60"> -———————————————————————————————————————————————————————————————————————-—-</tspan>
+<tspan x="{COL2_X}" y="22" font-weight="bold">matias@pinho</tspan><tspan fill="#565d60"> -———————————————————————————————————————————————————————————————————————-—-</tspan>
 
-<tspan x="{COL2_X}" y="50" ><tspan class="dot">. </tspan><tspan class="key">OS</tspan><tspan class="dot">:........................ </tspan><tspan class="val">Linux, Android</tspan></tspan>
-<tspan x="{COL2_X}" y="70" ><tspan class="dot">. </tspan><tspan class="key">Location</tspan><tspan class="dot">:.................. </tspan><tspan class="val">Buenos Aires, Argentina</tspan></tspan>
-<tspan x="{COL2_X}" y="90" ><tspan class="dot">. </tspan><tspan class="key">Host</tspan><tspan class="dot">:...................... </tspan><tspan class="val">G&amp;L Group</tspan></tspan>
-<tspan x="{COL2_X}" y="110"><tspan class="dot">. </tspan><tspan class="key">Role</tspan><tspan class="dot">:...................... </tspan><tspan class="val">Frontend Developer</tspan></tspan>
-<tspan x="{COL2_X}" y="130"><tspan class="dot">. </tspan><tspan class="key">Experience</tspan><tspan class="dot">:................ </tspan><tspan class="val">+2 years</tspan></tspan>
-<tspan x="{COL2_X}" y="150"><tspan class="dot">. </tspan><tspan class="key">IDE</tspan><tspan class="dot">:....................... </tspan><tspan class="val">VSCode</tspan></tspan>
-<tspan x="{COL2_X}" y="170"><tspan class="dot">. </tspan></tspan>
+<tspan x="{COL2_X}" y="44" ><tspan class="dot">. </tspan><tspan class="key">OS</tspan><tspan class="dot">:........ </tspan><tspan class="val">Linux, Android</tspan></tspan>
+<tspan x="{COL2_X}" y="66" ><tspan class="dot">. </tspan><tspan class="key">Location</tspan><tspan class="dot">:.. </tspan><tspan class="val">Buenos Aires, Argentina</tspan></tspan>
+<tspan x="{COL2_X}" y="88" ><tspan class="dot">. </tspan><tspan class="key">Host</tspan><tspan class="dot">:...... </tspan><tspan class="val">G&amp;L Group</tspan></tspan>
+<tspan x="{COL2_X}" y="110"><tspan class="dot">. </tspan><tspan class="key">Role</tspan><tspan class="dot">:...... </tspan><tspan class="val">Frontend Developer</tspan></tspan>
+<tspan x="{COL2_X}" y="132"><tspan class="dot">. </tspan><tspan class="key">Experience</tspan><tspan class="dot">: </tspan><tspan class="val">+2 years</tspan></tspan>
+<tspan x="{COL2_X}" y="154"><tspan class="dot">. </tspan><tspan class="key">IDE</tspan><tspan class="dot">:....... </tspan><tspan class="val">VSCode</tspan></tspan>
+<tspan x="{COL2_X}" y="176"><tspan class="dot">. </tspan></tspan>
 
-<tspan x="{COL2_X}" y="190"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Programming</tspan><tspan class="dot">:..... </tspan><tspan class="val">JavaScript, TypeScript, Java</tspan></tspan>
-<tspan x="{COL2_X}" y="210"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Markup</tspan><tspan class="dot">:.......... </tspan><tspan class="val">HTML, CSS, SASS</tspan></tspan>
-<tspan x="{COL2_X}" y="230"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Real</tspan><tspan class="dot">:............ </tspan><tspan class="val">Spanish, English</tspan></tspan>
-<tspan x="{COL2_X}" y="250"><tspan class="dot">. </tspan></tspan>
+<tspan x="{COL2_X}" y="198"><tspan class="dot">. </tspan><tspan class="key">Code</tspan><tspan class="dot">:...... </tspan><tspan class="val">JavaScript, TypeScript, Java</tspan></tspan>
+<tspan x="{COL2_X}" y="220"><tspan class="dot">. </tspan><tspan class="key">Markup</tspan><tspan class="dot">:.... </tspan><tspan class="val">HTML, CSS, SASS</tspan></tspan>
+<tspan x="{COL2_X}" y="242"><tspan class="dot">. </tspan><tspan class="key">Spoken</tspan><tspan class="dot">:.... </tspan><tspan class="val">Spanish, English</tspan></tspan>
+<tspan x="{COL2_X}" y="264"><tspan class="dot">. </tspan></tspan>
 
-<tspan x="{COL2_X}" y="270"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">Frontend</tspan><tspan class="dot">:............ </tspan><tspan class="val">React, Angular, Astro, Tailwind</tspan></tspan>
-<tspan x="{COL2_X}" y="290"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">Backend</tspan><tspan class="dot">:............. </tspan><tspan class="val">Node.js, Express, Jest</tspan></tspan>
-<tspan x="{COL2_X}" y="310"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">DB</tspan><tspan class="dot">:.................. </tspan><tspan class="val">MySQL, MongoDB</tspan></tspan>
+<tspan x="{COL2_X}" y="286"><tspan class="dot">. </tspan><tspan class="key">Frontend</tspan><tspan class="dot">:.. </tspan><tspan class="val">React, Angular, Astro, Tailwind</tspan></tspan>
+<tspan x="{COL2_X}" y="308"><tspan class="dot">. </tspan><tspan class="key">Backend</tspan><tspan class="dot">:... </tspan><tspan class="val">Node.js, Express, Jest</tspan></tspan>
+<tspan x="{COL2_X}" y="330"><tspan class="dot">. </tspan><tspan class="key">DB</tspan><tspan class="dot">:........ </tspan><tspan class="val">MySQL, MongoDB</tspan></tspan>
 
-<tspan x="{COL2_X}" y="330" fill="#565d60">- Contact -——————————————————————————————————————————————-—-</tspan>
+<tspan x="{COL2_X}" y="352" fill="#565d60">- Contact -——————————————————————————————————————————————-—-</tspan>
 
 </text>
 
 <!-- Column 2 — clickable contact links -->
-<text x="{COL2_X}" font-size="16px">
+<text x="{COL2_X}" font-size="18px">
   <a xlink:href="mailto:matiaspinho.dev@gmail.com" target="_blank">
-    <tspan x="{COL2_X}" y="350"><tspan class="dot">. </tspan><tspan class="key">Email</tspan><tspan class="dot">:..................... </tspan><tspan class="val">matiaspinho.dev@gmail.com</tspan></tspan>
+    <tspan x="{COL2_X}" y="374"><tspan class="dot">. </tspan><tspan class="key">Email</tspan><tspan class="dot">:..... </tspan><tspan class="val">matiaspinho.dev@gmail.com</tspan></tspan>
   </a>
   <a xlink:href="https://linkedin.com/in/matias-pinho" target="_blank">
-    <tspan x="{COL2_X}" y="370"><tspan class="dot">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="dot">:.................. </tspan><tspan class="val">matias-pinho</tspan></tspan>
+    <tspan x="{COL2_X}" y="396"><tspan class="dot">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="dot">:.. </tspan><tspan class="val">matias-pinho</tspan></tspan>
   </a>
   <a xlink:href="https://matiaspinho-portfolio.vercel.app" target="_blank">
-    <tspan x="{COL2_X}" y="390"><tspan class="dot">. </tspan><tspan class="key">Portfolio</tspan><tspan class="dot">:................. </tspan><tspan class="val">matiaspinho-portfolio.vercel.app</tspan></tspan>
+    <tspan x="{COL2_X}" y="418"><tspan class="dot">. </tspan><tspan class="key">Portfolio</tspan><tspan class="dot">:. </tspan><tspan class="val">matiaspinho-portfolio.vercel.app</tspan></tspan>
   </a>
 </text>
 
-<!-- Column 2 — GitHub stats -->
-<text x="{COL2_X}" font-size="16px" fill="#cacccc">
-<tspan x="{COL2_X}" y="430" fill="#565d60">- GitHub Stats -————————————</tspan>
+<!-- Column 3 — GitHub stats -->
+<text x="{COL3_X}" font-size="18px" fill="#cacccc">
+<tspan x="{COL3_X}" y="44" fill="#565d60">- GitHub Stats -————————————</tspan>
 {stat_block}
-<tspan x="{COL2_X}" y="550"><tspan class="dot">. </tspan></tspan>
-<tspan x="{COL2_X}" y="570" fill="#565d60">- Top Languages -———————————</tspan>
+<tspan x="{COL3_X}" y="176"><tspan class="dot">. </tspan></tspan>
+<tspan x="{COL3_X}" y="198" fill="#565d60">- Top Languages -———————————</tspan>
 {lang_block}
-<tspan x="{COL2_X}" y="670"><tspan class="dot">. </tspan></tspan>
+<tspan x="{COL3_X}" y="308"><tspan class="dot">. </tspan></tspan>
 </text>
 
 <!-- Theme palette -->
 {pal}
 
 <!-- Quote -->
-<text x="{SVG_W // 2}" y="730" text-anchor="middle" font-size="14px" style="white-space:normal"><tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan></text>
+<text x="{SVG_W // 2}" y="542" text-anchor="middle" font-size="14px" style="white-space:normal"><tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan></text>
 
 </svg>
 """
