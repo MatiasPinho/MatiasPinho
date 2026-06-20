@@ -252,9 +252,7 @@ text, tspan {{ white-space: pre; }}
 {pal}
 
 <!-- Quote -->
-<text x="492" y="690" text-anchor="middle" font-size="14px">
-  <tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan>
-</text>
+<text x="492" y="690" text-anchor="middle" font-size="14px" style="white-space:normal"><tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan></text>
 
 </svg>
 """

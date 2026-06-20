@@ -106,10 +106,10 @@ text, tspan { white-space: pre; }
 <text x="390" font-size="16px" fill="#cacccc">
 <tspan x="390" y="490" fill="#565d60">- Top Languages -—————————————————————————————————————————-—-</tspan>
 <tspan x="390" y="510"><tspan class="dot">. </tspan></tspan>
-<tspan x="390" y="530"><tspan class="dot">. </tspan><tspan class="key">TypeScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓▓▓</tspan><tspan fill="#343d41">░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">49%</tspan></tspan>
-<tspan x="390" y="550"><tspan class="dot">. </tspan><tspan class="key">JavaScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓</tspan><tspan fill="#343d41">░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">15%</tspan></tspan>
-<tspan x="390" y="570"><tspan class="dot">. </tspan><tspan class="key">Astro</tspan><tspan class="dot">:........ </tspan><tspan class="key">▓</tspan><tspan fill="#343d41">░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">11%</tspan></tspan>
-<tspan x="390" y="590"><tspan class="dot">. </tspan><tspan class="key">CSS</tspan><tspan class="dot">:.......... </tspan><tspan class="key">▓</tspan><tspan fill="#343d41">░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">9%</tspan></tspan>
+<tspan x="390" y="530"><tspan class="dot">. </tspan><tspan class="key">TypeScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓▓▓</tspan><tspan fill="#343d41">░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">52%</tspan></tspan>
+<tspan x="390" y="550"><tspan class="dot">. </tspan><tspan class="key">JavaScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓</tspan><tspan fill="#343d41">░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">31%</tspan></tspan>
+<tspan x="390" y="570"><tspan class="dot">. </tspan><tspan class="key">CSS</tspan><tspan class="dot">:.......... </tspan><tspan class="key">▓</tspan><tspan fill="#343d41">░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">11%</tspan></tspan>
+<tspan x="390" y="590"><tspan class="dot">. </tspan><tspan class="key">HTML</tspan><tspan class="dot">:......... </tspan><tspan class="key">▓</tspan><tspan fill="#343d41">░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">6%</tspan></tspan>
 <tspan x="390" y="610"><tspan class="dot">. </tspan></tspan>
 </text>
 
@@ -132,8 +132,6 @@ text, tspan { white-space: pre; }
 <rect x="628" y="650" width="30" height="14" fill="#a5aeb4" stroke="#1e2427" stroke-width="0.5" rx="2"/>
 
 <!-- Quote -->
-<text x="492" y="690" text-anchor="middle" font-size="14px">
-  <tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan>
-</text>
+<text x="492" y="690" text-anchor="middle" font-size="14px" style="white-space:normal"><tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan></text>
 
 </svg>
