@@ -138,7 +138,7 @@ def build_svg(repos, stars, followers, commits, contributed, langs):
     return f"""\
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     font-family="ConsolasFallback,Consolas,monospace" width="985px" height="670px" font-size="16px">
+     font-family="ConsolasFallback,Consolas,monospace" width="985px" height="710px" font-size="16px">
 <style>
 @font-face {{
   src: local('Consolas'), local('Consolas Bold');
@@ -153,7 +153,7 @@ def build_svg(repos, stars, followers, commits, contributed, langs):
 text, tspan {{ white-space: pre; }}
 </style>
 
-<rect width="985px" height="670px" fill="#101315" rx="12"/>
+<rect width="985px" height="710px" fill="#101315" rx="12"/>
 
 <!-- ASCII art — bee -->
 <text x="15" y="30" fill="#de6145">
@@ -189,6 +189,8 @@ text, tspan {{ white-space: pre; }}
 <tspan x="15" y="610">                                             </tspan>
 <tspan x="15" y="630">                                             </tspan>
 <tspan x="15" y="650">                                             </tspan>
+<tspan x="15" y="670">                                             </tspan>
+<tspan x="15" y="690">                                             </tspan>
 </text>
 
 <!-- Info panel -->
@@ -248,6 +250,11 @@ text, tspan {{ white-space: pre; }}
 
 <!-- Theme palette -->
 {pal}
+
+<!-- Quote -->
+<text x="492" y="690" text-anchor="middle" font-size="14px">
+  <tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan>
+</text>
 
 </svg>
 """
