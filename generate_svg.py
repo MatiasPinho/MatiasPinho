@@ -165,6 +165,7 @@ text, tspan {{ white-space: pre; }}
 <tspan x="95" y="390">jgs `~~~~ &gt;&gt;&gt;^</tspan>
 </text>
 
+<g transform="translate(-55 0)">
 <!-- Info panel -->
 <text x="390" y="30" fill="#cacccc">
 
@@ -222,6 +223,7 @@ text, tspan {{ white-space: pre; }}
 
 <!-- Theme palette -->
 {pal}
+</g>
 
 <!-- Quote -->
 <text x="492" y="690" text-anchor="middle" font-size="14px" style="white-space:normal"><tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan></text>
