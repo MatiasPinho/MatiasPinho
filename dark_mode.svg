@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     font-family="ConsolasFallback,Consolas,monospace" width="990px" height="755px" font-size="16px">
+     font-family="ConsolasFallback,Consolas,monospace" width="1200px" height="490px" font-size="16px">
 <style>
 @font-face {
   src: local('Consolas'), local('Consolas Bold');
@@ -15,7 +15,7 @@
 text, tspan { white-space: pre; }
 </style>
 
-<rect width="990px" height="755px" fill="#101315" rx="12"/>
+<rect width="1200px" height="490px" fill="#101315" rx="12"/>
 
 <!-- Column 1 — bee -->
 <text x="15" y="30" fill="#de6145">
@@ -45,80 +45,80 @@ text, tspan { white-space: pre; }
 </text>
 
 <!-- Column 2 — system info -->
-<text x="395" y="30" fill="#cacccc">
+<text x="390" y="30" fill="#cacccc">
 
-<tspan x="395" y="30" font-weight="bold">matias@pinho</tspan><tspan fill="#565d60"> -———————————————————————————————————————————————————————————————————————-—-</tspan>
+<tspan x="390" y="30" font-weight="bold">matias@pinho</tspan><tspan fill="#565d60"> -———————————————————————————————————————————————————————————————————————-—-</tspan>
 
-<tspan x="395" y="50" ><tspan class="dot">. </tspan><tspan class="key">OS</tspan><tspan class="dot">:........................ </tspan><tspan class="val">Linux, Android</tspan></tspan>
-<tspan x="395" y="70" ><tspan class="dot">. </tspan><tspan class="key">Location</tspan><tspan class="dot">:.................. </tspan><tspan class="val">Buenos Aires, Argentina</tspan></tspan>
-<tspan x="395" y="90" ><tspan class="dot">. </tspan><tspan class="key">Host</tspan><tspan class="dot">:...................... </tspan><tspan class="val">G&amp;L Group</tspan></tspan>
-<tspan x="395" y="110"><tspan class="dot">. </tspan><tspan class="key">Role</tspan><tspan class="dot">:...................... </tspan><tspan class="val">Frontend Developer</tspan></tspan>
-<tspan x="395" y="130"><tspan class="dot">. </tspan><tspan class="key">Experience</tspan><tspan class="dot">:................ </tspan><tspan class="val">+2 years</tspan></tspan>
-<tspan x="395" y="150"><tspan class="dot">. </tspan><tspan class="key">IDE</tspan><tspan class="dot">:....................... </tspan><tspan class="val">VSCode</tspan></tspan>
-<tspan x="395" y="170"><tspan class="dot">. </tspan></tspan>
+<tspan x="390" y="50" ><tspan class="dot">. </tspan><tspan class="key">OS</tspan><tspan class="dot">:........................ </tspan><tspan class="val">Linux, Android</tspan></tspan>
+<tspan x="390" y="70" ><tspan class="dot">. </tspan><tspan class="key">Location</tspan><tspan class="dot">:.................. </tspan><tspan class="val">Buenos Aires, Argentina</tspan></tspan>
+<tspan x="390" y="90" ><tspan class="dot">. </tspan><tspan class="key">Host</tspan><tspan class="dot">:...................... </tspan><tspan class="val">G&amp;L Group</tspan></tspan>
+<tspan x="390" y="110"><tspan class="dot">. </tspan><tspan class="key">Role</tspan><tspan class="dot">:...................... </tspan><tspan class="val">Frontend Developer</tspan></tspan>
+<tspan x="390" y="130"><tspan class="dot">. </tspan><tspan class="key">Experience</tspan><tspan class="dot">:................ </tspan><tspan class="val">+2 years</tspan></tspan>
+<tspan x="390" y="150"><tspan class="dot">. </tspan><tspan class="key">IDE</tspan><tspan class="dot">:....................... </tspan><tspan class="val">VSCode</tspan></tspan>
+<tspan x="390" y="170"><tspan class="dot">. </tspan></tspan>
 
-<tspan x="395" y="190"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Programming</tspan><tspan class="dot">:..... </tspan><tspan class="val">JavaScript, TypeScript, Java</tspan></tspan>
-<tspan x="395" y="210"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Markup</tspan><tspan class="dot">:.......... </tspan><tspan class="val">HTML, CSS, SASS</tspan></tspan>
-<tspan x="395" y="230"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Real</tspan><tspan class="dot">:............ </tspan><tspan class="val">Spanish, English</tspan></tspan>
-<tspan x="395" y="250"><tspan class="dot">. </tspan></tspan>
+<tspan x="390" y="190"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Programming</tspan><tspan class="dot">:..... </tspan><tspan class="val">JavaScript, TypeScript, Java</tspan></tspan>
+<tspan x="390" y="210"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Markup</tspan><tspan class="dot">:.......... </tspan><tspan class="val">HTML, CSS, SASS</tspan></tspan>
+<tspan x="390" y="230"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Real</tspan><tspan class="dot">:............ </tspan><tspan class="val">Spanish, English</tspan></tspan>
+<tspan x="390" y="250"><tspan class="dot">. </tspan></tspan>
 
-<tspan x="395" y="270"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">Frontend</tspan><tspan class="dot">:............ </tspan><tspan class="val">React, Angular, Astro, Tailwind</tspan></tspan>
-<tspan x="395" y="290"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">Backend</tspan><tspan class="dot">:............. </tspan><tspan class="val">Node.js, Express, Jest</tspan></tspan>
-<tspan x="395" y="310"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">DB</tspan><tspan class="dot">:.................. </tspan><tspan class="val">MySQL, MongoDB</tspan></tspan>
+<tspan x="390" y="270"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">Frontend</tspan><tspan class="dot">:............ </tspan><tspan class="val">React, Angular, Astro, Tailwind</tspan></tspan>
+<tspan x="390" y="290"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">Backend</tspan><tspan class="dot">:............. </tspan><tspan class="val">Node.js, Express, Jest</tspan></tspan>
+<tspan x="390" y="310"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">DB</tspan><tspan class="dot">:.................. </tspan><tspan class="val">MySQL, MongoDB</tspan></tspan>
 
-<tspan x="395" y="330" fill="#565d60">- Contact -——————————————————————————————————————————————-—-</tspan>
+<tspan x="390" y="330" fill="#565d60">- Contact -——————————————————————————————————————————————-—-</tspan>
 
 </text>
 
 <!-- Column 2 — clickable contact links -->
-<text x="395" font-size="16px">
+<text x="390" font-size="16px">
   <a xlink:href="mailto:matiaspinho.dev@gmail.com" target="_blank">
-    <tspan x="395" y="350"><tspan class="dot">. </tspan><tspan class="key">Email</tspan><tspan class="dot">:..................... </tspan><tspan class="val">matiaspinho.dev@gmail.com</tspan></tspan>
+    <tspan x="390" y="350"><tspan class="dot">. </tspan><tspan class="key">Email</tspan><tspan class="dot">:..................... </tspan><tspan class="val">matiaspinho.dev@gmail.com</tspan></tspan>
   </a>
   <a xlink:href="https://linkedin.com/in/matias-pinho" target="_blank">
-    <tspan x="395" y="370"><tspan class="dot">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="dot">:.................. </tspan><tspan class="val">matias-pinho</tspan></tspan>
+    <tspan x="390" y="370"><tspan class="dot">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="dot">:.................. </tspan><tspan class="val">matias-pinho</tspan></tspan>
   </a>
   <a xlink:href="https://matiaspinho-portfolio.vercel.app" target="_blank">
-    <tspan x="395" y="390"><tspan class="dot">. </tspan><tspan class="key">Portfolio</tspan><tspan class="dot">:................. </tspan><tspan class="val">matiaspinho-portfolio.vercel.app</tspan></tspan>
+    <tspan x="390" y="390"><tspan class="dot">. </tspan><tspan class="key">Portfolio</tspan><tspan class="dot">:................. </tspan><tspan class="val">matiaspinho-portfolio.vercel.app</tspan></tspan>
   </a>
 </text>
 
-<!-- Column 2 — GitHub stats -->
-<text x="395" font-size="16px" fill="#cacccc">
-<tspan x="395" y="430" fill="#565d60">- GitHub Stats -————————————</tspan>
-<tspan x="395" y="450"><tspan class="dot">. </tspan><tspan class="key">Repos</tspan><tspan class="dot">:........ </tspan><tspan class="val">13</tspan></tspan>
-<tspan x="395" y="470"><tspan class="dot">. </tspan><tspan class="key">Stars</tspan><tspan class="dot">:........ </tspan><tspan class="val">1</tspan></tspan>
-<tspan x="395" y="490"><tspan class="dot">. </tspan><tspan class="key">Commits</tspan><tspan class="dot">:...... </tspan><tspan class="val">198</tspan></tspan>
-<tspan x="395" y="510"><tspan class="dot">. </tspan><tspan class="key">Followers</tspan><tspan class="dot">:.... </tspan><tspan class="val">9</tspan></tspan>
-<tspan x="395" y="530"><tspan class="dot">. </tspan><tspan class="key">Contributed</tspan><tspan class="dot">:.. </tspan><tspan class="val">0</tspan></tspan>
-<tspan x="395" y="550"><tspan class="dot">. </tspan></tspan>
-<tspan x="395" y="570" fill="#565d60">- Top Languages -———————————</tspan>
-<tspan x="395" y="590"><tspan class="dot">. </tspan><tspan class="key">TypeScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓▓▓</tspan><tspan fill="#343d41">░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">49%</tspan></tspan>
-<tspan x="395" y="610"><tspan class="dot">. </tspan><tspan class="key">JavaScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓</tspan><tspan fill="#343d41">░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">15%</tspan></tspan>
-<tspan x="395" y="630"><tspan class="dot">. </tspan><tspan class="key">Astro</tspan><tspan class="dot">:........ </tspan><tspan class="key">▓</tspan><tspan fill="#343d41">░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">11%</tspan></tspan>
-<tspan x="395" y="650"><tspan class="dot">. </tspan><tspan class="key">CSS</tspan><tspan class="dot">:.......... </tspan><tspan class="key">▓</tspan><tspan fill="#343d41">░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">9%</tspan></tspan>
-<tspan x="395" y="670"><tspan class="dot">. </tspan></tspan>
+<!-- Column 3 — GitHub stats -->
+<text x="900" font-size="16px" fill="#cacccc">
+<tspan x="900" y="50" fill="#565d60">- GitHub Stats -————————————</tspan>
+<tspan x="900" y="70"><tspan class="dot">. </tspan><tspan class="key">Repos</tspan><tspan class="dot">:........ </tspan><tspan class="val">13</tspan></tspan>
+<tspan x="900" y="90"><tspan class="dot">. </tspan><tspan class="key">Stars</tspan><tspan class="dot">:........ </tspan><tspan class="val">1</tspan></tspan>
+<tspan x="900" y="110"><tspan class="dot">. </tspan><tspan class="key">Commits</tspan><tspan class="dot">:...... </tspan><tspan class="val">198</tspan></tspan>
+<tspan x="900" y="130"><tspan class="dot">. </tspan><tspan class="key">Followers</tspan><tspan class="dot">:.... </tspan><tspan class="val">9</tspan></tspan>
+<tspan x="900" y="150"><tspan class="dot">. </tspan><tspan class="key">Contributed</tspan><tspan class="dot">:.. </tspan><tspan class="val">0</tspan></tspan>
+<tspan x="900" y="170"><tspan class="dot">. </tspan></tspan>
+<tspan x="900" y="190" fill="#565d60">- Top Languages -———————————</tspan>
+<tspan x="900" y="210"><tspan class="dot">. </tspan><tspan class="key">TypeScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓▓▓</tspan><tspan fill="#343d41">░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">49%</tspan></tspan>
+<tspan x="900" y="230"><tspan class="dot">. </tspan><tspan class="key">JavaScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓</tspan><tspan fill="#343d41">░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">15%</tspan></tspan>
+<tspan x="900" y="250"><tspan class="dot">. </tspan><tspan class="key">Astro</tspan><tspan class="dot">:........ </tspan><tspan class="key">▓</tspan><tspan fill="#343d41">░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">11%</tspan></tspan>
+<tspan x="900" y="270"><tspan class="dot">. </tspan><tspan class="key">CSS</tspan><tspan class="dot">:.......... </tspan><tspan class="key">▓</tspan><tspan fill="#343d41">░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">9%</tspan></tspan>
+<tspan x="900" y="290"><tspan class="dot">. </tspan></tspan>
 </text>
 
 <!-- Theme palette -->
-<rect x="361" y="690" width="30" height="14" fill="#101315" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="395" y="690" width="30" height="14" fill="#565d60" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="429" y="690" width="30" height="14" fill="#9fa5a9" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="463" y="690" width="30" height="14" fill="#d9dbdc" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="497" y="690" width="30" height="14" fill="#798186" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="531" y="690" width="30" height="14" fill="#aeaeae" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="565" y="690" width="30" height="14" fill="#707070" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="599" y="690" width="30" height="14" fill="#cbc2be" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="361" y="708" width="30" height="14" fill="#4b4e55" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="395" y="708" width="30" height="14" fill="#de6145" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="429" y="708" width="30" height="14" fill="#343d41" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="463" y="708" width="30" height="14" fill="#c9c2b4" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="497" y="708" width="30" height="14" fill="#5d6367" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="531" y="708" width="30" height="14" fill="#9a9a9a" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="565" y="708" width="30" height="14" fill="#707070" stroke="#1e2427" stroke-width="0.5" rx="2"/>
-<rect x="599" y="708" width="30" height="14" fill="#a5aeb4" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="466" y="415" width="30" height="14" fill="#101315" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="500" y="415" width="30" height="14" fill="#565d60" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="534" y="415" width="30" height="14" fill="#9fa5a9" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="568" y="415" width="30" height="14" fill="#d9dbdc" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="602" y="415" width="30" height="14" fill="#798186" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="636" y="415" width="30" height="14" fill="#aeaeae" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="670" y="415" width="30" height="14" fill="#707070" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="704" y="415" width="30" height="14" fill="#cbc2be" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="466" y="433" width="30" height="14" fill="#4b4e55" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="500" y="433" width="30" height="14" fill="#de6145" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="534" y="433" width="30" height="14" fill="#343d41" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="568" y="433" width="30" height="14" fill="#c9c2b4" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="602" y="433" width="30" height="14" fill="#5d6367" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="636" y="433" width="30" height="14" fill="#9a9a9a" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="670" y="433" width="30" height="14" fill="#707070" stroke="#1e2427" stroke-width="0.5" rx="2"/>
+<rect x="704" y="433" width="30" height="14" fill="#a5aeb4" stroke="#1e2427" stroke-width="0.5" rx="2"/>
 
 <!-- Quote -->
-<text x="495" y="730" text-anchor="middle" font-size="14px" style="white-space:normal"><tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan></text>
+<text x="600" y="468" text-anchor="middle" font-size="14px" style="white-space:normal"><tspan fill="#de6145">&gt;</tspan><tspan fill="#565d60"> You will be what you must be, or you will be nothing.</tspan></text>
 
 </svg>
