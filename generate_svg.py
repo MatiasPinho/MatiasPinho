@@ -155,42 +155,14 @@ text, tspan {{ white-space: pre; }}
 
 <rect width="985px" height="710px" fill="#101315" rx="12"/>
 
-<!-- ASCII art — bee -->
-<text x="15" y="30" fill="#de6145">
-<tspan x="15" y="30" >                                             </tspan>
-<tspan x="15" y="50" >                  o   ^   o                  </tspan>
-<tspan x="15" y="70" >                (%%%%%%%%%%%)                </tspan>
-<tspan x="15" y="90" >           ( / )(%%%%%%%%%%%)( \\ )           </tspan>
-<tspan x="15" y="110">         ( / / )(%%%%%%%%%%%)( \\ \\ )         </tspan>
-<tspan x="15" y="130">       ( / / / )(%%%%%%%%%%%)( \\ \\ \\ )       </tspan>
-<tspan x="15" y="150">     ( / / / / )(%%%%%%%%%%%)( \\ \\ \\ \\ )     </tspan>
-<tspan x="15" y="170">   ( / / / / / )(%%%%%%%%%%%)( \\ \\ \\ \\ \\ )  </tspan>
-<tspan x="15" y="190">     ( / / / / )(%%%%%%%%%%%)( \\ \\ \\ \\ )     </tspan>
-<tspan x="15" y="210">       ( / / / )(%%%%%%%%%%%)( \\ \\ \\ )       </tspan>
-<tspan x="15" y="230">         ( / / )(%%%%%%%%%%%)( \\ \\ )         </tspan>
-<tspan x="15" y="250">           ( / )(%%%%%%%%%%%)( \\ )           </tspan>
-<tspan x="15" y="270">                (%%%%%%%%%%%)                </tspan>
-<tspan x="15" y="290">                (%%%%%%%%%%%)                </tspan>
-<tspan x="15" y="310">                 (%%%%%%%%%%)                </tspan>
-<tspan x="15" y="330">                  (%%%%%%%%%)                </tspan>
-<tspan x="15" y="350">                   (%%%%%%%)                 </tspan>
-<tspan x="15" y="370">                    (%%%%%)                  </tspan>
-<tspan x="15" y="390">                     (%%%)                   </tspan>
-<tspan x="15" y="410">                      (%)                    </tspan>
-<tspan x="15" y="430">                       !                     </tspan>
-<tspan x="15" y="450">                                             </tspan>
-<tspan x="15" y="470">                                             </tspan>
-<tspan x="15" y="490">                                             </tspan>
-<tspan x="15" y="510">                                             </tspan>
-<tspan x="15" y="530">                                             </tspan>
-<tspan x="15" y="550">                                             </tspan>
-<tspan x="15" y="570">                                             </tspan>
-<tspan x="15" y="590">                                             </tspan>
-<tspan x="15" y="610">                                             </tspan>
-<tspan x="15" y="630">                                             </tspan>
-<tspan x="15" y="650">                                             </tspan>
-<tspan x="15" y="670">                                             </tspan>
-<tspan x="15" y="690">                                             </tspan>
+<!-- ASCII art -->
+<text x="95" y="250" fill="#de6145" font-size="22px">
+<tspan x="95" y="250">     _ ___</tspan>
+<tspan x="95" y="278">     \\.\\'.\\</tspan>
+<tspan x="95" y="306">      \\'\\'.\\</tspan>
+<tspan x="95" y="334">     __\\.\\:/_//</tspan>
+<tspan x="95" y="362">    {{{{{{{{{{(__(")</tspan>
+<tspan x="95" y="390">jgs `~~~~ &gt;&gt;&gt;^</tspan>
 </text>
 
 <!-- Info panel -->
