@@ -12,6 +12,7 @@
 .key { fill: #de6145; }
 .val { fill: #cacccc; }
 .dot { fill: #798186; }
+.info-panel text > tspan[fill="#565d60"] { display: none; }
 text, tspan { white-space: pre; }
 </style>
 
@@ -27,7 +28,13 @@ text, tspan { white-space: pre; }
 <tspan x="95" y="390">jgs `~~~~ &gt;&gt;&gt;^</tspan>
 </text>
 
-<g transform="translate(-55 0)">
+<g class="info-panel" transform="translate(-55 0)">
+<g fill="#565d60" stroke="#565d60" stroke-width="1">
+  <line x1="500" y1="25" x2="950" y2="25"/>
+  <text x="390" y="350" stroke="none">- Contact</text><line x1="535" y1="345" x2="950" y2="345"/>
+  <text x="390" y="450" stroke="none">- GitHub Stats</text><line x1="535" y1="445" x2="950" y2="445"/>
+  <text x="390" y="530" stroke="none">- Top Languages</text><line x1="535" y1="525" x2="950" y2="525"/>
+</g>
 <!-- Info panel -->
 <text x="390" y="30" fill="#cacccc">
 
@@ -39,13 +46,9 @@ text, tspan { white-space: pre; }
 <tspan x="390" y="110"><tspan class="dot">. </tspan><tspan class="key">Role</tspan><tspan class="dot">:...................... </tspan><tspan class="val">Frontend Developer</tspan></tspan>
 <tspan x="390" y="130"><tspan class="dot">. </tspan><tspan class="key">Experience</tspan><tspan class="dot">:................ </tspan><tspan class="val">+2 years</tspan></tspan>
 <tspan x="390" y="150"><tspan class="dot">. </tspan><tspan class="key">IDE</tspan><tspan class="dot">:....................... </tspan><tspan class="val">VSCode</tspan></tspan>
-<tspan x="390" y="170"><tspan class="dot">. </tspan></tspan>
-
 <tspan x="390" y="190"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Programming</tspan><tspan class="dot">:..... </tspan><tspan class="val">JavaScript, TypeScript, Java</tspan></tspan>
 <tspan x="390" y="210"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Markup</tspan><tspan class="dot">:.......... </tspan><tspan class="val">HTML, CSS, SASS</tspan></tspan>
 <tspan x="390" y="230"><tspan class="dot">. </tspan><tspan class="key">Languages</tspan><tspan class="dot">.</tspan><tspan class="key">Real</tspan><tspan class="dot">:............ </tspan><tspan class="val">Spanish, English</tspan></tspan>
-<tspan x="390" y="250"><tspan class="dot">. </tspan></tspan>
-
 <tspan x="390" y="270"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">Frontend</tspan><tspan class="dot">:............ </tspan><tspan class="val">React, Angular, Astro, Tailwind</tspan></tspan>
 <tspan x="390" y="290"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">Backend</tspan><tspan class="dot">:............. </tspan><tspan class="val">Node.js, Express, Jest</tspan></tspan>
 <tspan x="390" y="310"><tspan class="dot">. </tspan><tspan class="key">Stack</tspan><tspan class="dot">.</tspan><tspan class="key">DB</tspan><tspan class="dot">:.................. </tspan><tspan class="val">MySQL, MongoDB</tspan></tspan>
@@ -57,33 +60,30 @@ text, tspan { white-space: pre; }
 <!-- Clickable contact links -->
 <text x="390" font-size="16px">
   <a xlink:href="mailto:matiaspinho.dev@gmail.com" target="_blank">
-    <tspan x="390" y="350"><tspan class="dot">. </tspan><tspan class="key">Email</tspan><tspan class="dot">:..................... </tspan><tspan class="val">matiaspinho.dev@gmail.com</tspan></tspan>
+    <tspan x="390" y="370"><tspan class="dot">. </tspan><tspan class="key">Email</tspan><tspan class="dot">:..................... </tspan><tspan class="val">matiaspinho.dev@gmail.com</tspan></tspan>
   </a>
   <a xlink:href="https://linkedin.com/in/matias-pinho" target="_blank">
-    <tspan x="390" y="370"><tspan class="dot">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="dot">:.................. </tspan><tspan class="val">matias-pinho</tspan></tspan>
+    <tspan x="390" y="390"><tspan class="dot">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="dot">:.................. </tspan><tspan class="val">matias-pinho</tspan></tspan>
   </a>
   <a xlink:href="https://matiaspinho-portfolio.vercel.app" target="_blank">
-    <tspan x="390" y="390"><tspan class="dot">. </tspan><tspan class="key">Portfolio</tspan><tspan class="dot">:................. </tspan><tspan class="val">matiaspinho-portfolio.vercel.app</tspan></tspan>
+    <tspan x="390" y="410"><tspan class="dot">. </tspan><tspan class="key">Portfolio</tspan><tspan class="dot">:................. </tspan><tspan class="val">matiaspinho-portfolio.vercel.app</tspan></tspan>
   </a>
 </text>
 
 <!-- GitHub Stats -->
 <text x="390" font-size="16px" fill="#cacccc">
 <tspan x="390" y="410" fill="#565d60">- GitHub Stats -—————————————————————————————————————————-—-</tspan>
-<tspan x="390" y="430"><tspan class="dot">. </tspan><tspan class="key">Repos</tspan><tspan class="dot">:..... </tspan><tspan class="val">14</tspan><tspan class="dot"> {</tspan><tspan class="key">Contributed</tspan><tspan class="dot">: </tspan><tspan class="val">0</tspan><tspan class="dot">} | </tspan><tspan class="key">Followers</tspan><tspan class="dot">:......... </tspan><tspan class="val">9</tspan></tspan>
-<tspan x="390" y="450"><tspan class="dot">. </tspan><tspan class="key">Commits</tspan><tspan class="dot">:................. </tspan><tspan class="val">204</tspan><tspan class="dot"> | </tspan><tspan class="key">Stars</tspan><tspan class="dot">:............. </tspan><tspan class="val">1</tspan></tspan>
-<tspan x="390" y="470"><tspan class="dot">. </tspan></tspan>
+<tspan x="390" y="470"><tspan class="dot">. </tspan><tspan class="key">Repos</tspan><tspan class="dot">:..... </tspan><tspan class="val">14</tspan><tspan class="dot"> {</tspan><tspan class="key">Contributed</tspan><tspan class="dot">: </tspan><tspan class="val">0</tspan><tspan class="dot">} | </tspan><tspan class="key">Followers</tspan><tspan class="dot">:......... </tspan><tspan class="val">9</tspan></tspan>
+<tspan x="390" y="490"><tspan class="dot">. </tspan><tspan class="key">Commits</tspan><tspan class="dot">:................. </tspan><tspan class="val">204</tspan><tspan class="dot"> | </tspan><tspan class="key">Stars</tspan><tspan class="dot">:............. </tspan><tspan class="val">1</tspan></tspan>
 </text>
 
 <!-- Top Languages -->
 <text x="390" font-size="16px" fill="#cacccc">
 <tspan x="390" y="490" fill="#565d60">- Top Languages -—————————————————————————————————————————-—-</tspan>
-<tspan x="390" y="510"><tspan class="dot">. </tspan></tspan>
-<tspan x="390" y="530"><tspan class="dot">. </tspan><tspan class="key">JavaScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓▓▓▓</tspan><tspan fill="#343d41">░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">57%</tspan></tspan>
-<tspan x="390" y="550"><tspan class="dot">. </tspan><tspan class="key">TypeScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓</tspan><tspan fill="#343d41">░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">28%</tspan></tspan>
-<tspan x="390" y="570"><tspan class="dot">. </tspan><tspan class="key">Astro</tspan><tspan class="dot">:........ </tspan><tspan class="key"></tspan><tspan fill="#343d41">░░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">4%</tspan></tspan>
-<tspan x="390" y="590"><tspan class="dot">. </tspan><tspan class="key">CSS</tspan><tspan class="dot">:.......... </tspan><tspan class="key"></tspan><tspan fill="#343d41">░░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">4%</tspan></tspan>
-<tspan x="390" y="610"><tspan class="dot">. </tspan></tspan>
+<tspan x="390" y="550"><tspan class="dot">. </tspan><tspan class="key">JavaScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓▓▓▓</tspan><tspan fill="#343d41">░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">57%</tspan></tspan>
+<tspan x="390" y="570"><tspan class="dot">. </tspan><tspan class="key">TypeScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓</tspan><tspan fill="#343d41">░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">28%</tspan></tspan>
+<tspan x="390" y="590"><tspan class="dot">. </tspan><tspan class="key">Astro</tspan><tspan class="dot">:........ </tspan><tspan class="key"></tspan><tspan fill="#343d41">░░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">4%</tspan></tspan>
+<tspan x="390" y="610"><tspan class="dot">. </tspan><tspan class="key">CSS</tspan><tspan class="dot">:.......... </tspan><tspan class="key"></tspan><tspan fill="#343d41">░░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">4%</tspan></tspan>
 </text>
 
 <!-- Theme palette -->
