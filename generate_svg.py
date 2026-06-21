@@ -165,11 +165,10 @@ text, tspan {{ white-space: pre; }}
 </text>
 
 <g class="info-panel" transform="translate(-55 0)">
-<g fill="#565d60" stroke="#565d60" stroke-width="1">
-  <line x1="500" y1="25" x2="950" y2="25"/>
-  <text x="390" y="350" stroke="none">- Contact</text><line x1="535" y1="345" x2="950" y2="345"/>
-  <text x="390" y="450" stroke="none">- GitHub Stats</text><line x1="535" y1="445" x2="950" y2="445"/>
-  <text x="390" y="530" stroke="none">- Top Languages</text><line x1="535" y1="525" x2="950" y2="525"/>
+<g fill="#565d60">
+  <text x="390" y="350">- Contact</text>
+  <text x="390" y="450">- GitHub Stats</text>
+  <text x="390" y="530">- Top Languages</text>
 </g>
 <!-- Info panel -->
 <text x="390" y="30" fill="#cacccc">
