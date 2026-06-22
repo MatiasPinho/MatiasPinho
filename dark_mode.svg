@@ -73,7 +73,7 @@ text, tspan { white-space: pre; }
 <text x="390" font-size="16px" fill="#cacccc">
 <tspan x="390" y="410" fill="#565d60">- GitHub Stats -—————————————————————————————————————————-—-</tspan>
 <tspan x="390" y="470"><tspan class="dot">. </tspan><tspan class="key">Repos</tspan><tspan class="dot">:..... </tspan><tspan class="val">14</tspan><tspan class="dot"> {</tspan><tspan class="key">Contributed</tspan><tspan class="dot">: </tspan><tspan class="val">0</tspan><tspan class="dot">} | </tspan><tspan class="key">Followers</tspan><tspan class="dot">:......... </tspan><tspan class="val">9</tspan></tspan>
-<tspan x="390" y="490"><tspan class="dot">. </tspan><tspan class="key">Commits</tspan><tspan class="dot">:................. </tspan><tspan class="val">206</tspan><tspan class="dot"> | </tspan><tspan class="key">Stars</tspan><tspan class="dot">:............. </tspan><tspan class="val">1</tspan></tspan>
+<tspan x="390" y="490"><tspan class="dot">. </tspan><tspan class="key">Commits</tspan><tspan class="dot">:................. </tspan><tspan class="val">204</tspan><tspan class="dot"> | </tspan><tspan class="key">Stars</tspan><tspan class="dot">:............. </tspan><tspan class="val">1</tspan></tspan>
 </text>
 
 <!-- Top Languages -->
