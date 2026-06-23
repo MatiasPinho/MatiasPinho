@@ -73,14 +73,14 @@ text, tspan { white-space: pre; }
 <text x="390" font-size="16px" fill="#cacccc">
 <tspan x="390" y="410" fill="#565d60">- GitHub Stats -—————————————————————————————————————————-—-</tspan>
 <tspan x="390" y="470"><tspan class="dot">. </tspan><tspan class="key">Repos</tspan><tspan class="dot">:..... </tspan><tspan class="val">14</tspan><tspan class="dot"> {</tspan><tspan class="key">Contributed</tspan><tspan class="dot">: </tspan><tspan class="val">0</tspan><tspan class="dot">} | </tspan><tspan class="key">Followers</tspan><tspan class="dot">:......... </tspan><tspan class="val">9</tspan></tspan>
-<tspan x="390" y="490"><tspan class="dot">. </tspan><tspan class="key">Commits</tspan><tspan class="dot">:................. </tspan><tspan class="val">207</tspan><tspan class="dot"> | </tspan><tspan class="key">Stars</tspan><tspan class="dot">:............. </tspan><tspan class="val">1</tspan></tspan>
+<tspan x="390" y="490"><tspan class="dot">. </tspan><tspan class="key">Commits</tspan><tspan class="dot">:................. </tspan><tspan class="val">209</tspan><tspan class="dot"> | </tspan><tspan class="key">Stars</tspan><tspan class="dot">:............. </tspan><tspan class="val">1</tspan></tspan>
 </text>
 
 <!-- Top Languages -->
 <text x="390" font-size="16px" fill="#cacccc">
 <tspan x="390" y="490" fill="#565d60">- Top Languages -—————————————————————————————————————————-—-</tspan>
-<tspan x="390" y="550"><tspan class="dot">. </tspan><tspan class="key">JavaScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓▓▓▓</tspan><tspan fill="#343d41">░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">57%</tspan></tspan>
-<tspan x="390" y="570"><tspan class="dot">. </tspan><tspan class="key">TypeScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓</tspan><tspan fill="#343d41">░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">28%</tspan></tspan>
+<tspan x="390" y="550"><tspan class="dot">. </tspan><tspan class="key">JavaScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓▓▓▓</tspan><tspan fill="#343d41">░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">56%</tspan></tspan>
+<tspan x="390" y="570"><tspan class="dot">. </tspan><tspan class="key">TypeScript</tspan><tspan class="dot">:... </tspan><tspan class="key">▓▓▓</tspan><tspan fill="#343d41">░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">29%</tspan></tspan>
 <tspan x="390" y="590"><tspan class="dot">. </tspan><tspan class="key">CSS</tspan><tspan class="dot">:.......... </tspan><tspan class="key"></tspan><tspan fill="#343d41">░░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">4%</tspan></tspan>
 <tspan x="390" y="610"><tspan class="dot">. </tspan><tspan class="key">Astro</tspan><tspan class="dot">:........ </tspan><tspan class="key"></tspan><tspan fill="#343d41">░░░░░░░░░░</tspan><tspan class="dot">  </tspan><tspan class="val">4%</tspan></tspan>
 </text>
