@@ -104,7 +104,7 @@ text, tspan { white-space: pre; }
 </g>
 <text x="638" y="244" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">REPOS</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out .45s both">
-<text x="806" y="228" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="36px" fill="#e0403a">979</text>
+<text x="806" y="228" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="36px" fill="#e0403a">980</text>
 </g>
 <text x="806" y="244" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">COMMITS</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out .6s both">
@@ -172,8 +172,8 @@ text, tspan { white-space: pre; }
 <rect x="12" y="712" width="961" height="266" fill="#10131b" stroke="#efe6d5" stroke-width="2.5" rx="2"></rect>
 <rect x="14" y="714" width="957" height="262" fill="url(#net)" opacity="0.5"></rect>
 <rect x="36" y="738" width="10" height="10" fill="#e0403a"></rect>
-<text x="54" y="748" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">SPIDER-SENSE // CONTRIBUTIONS</text>
-<text x="949" y="748" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">430 CONTRIBUTIONS // LAST 12 MONTHS</text>
+<text x="54" y="748" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">CONTRIBUTIONS</text>
+<text x="949" y="748" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">431 CONTRIBUTIONS // LAST 12 MONTHS</text>
 <rect x="36" y="772" width="913" height="182" fill="#0b0d14" stroke="#efe6d5" stroke-width="1.5" rx="2"></rect>
 <path d="M36 772 L64 772 L36 800 Z" fill="#e0403a" opacity="0.5"></path>
 <path d="M949 954 L921 954 L949 926 Z" fill="#e0403a" opacity="0.5"></path>
@@ -548,7 +548,7 @@ text, tspan { white-space: pre; }
 <rect x="920" y="858" width="13" height="13" rx="1.5" fill="#ff5b52"></rect>
 <rect x="920" y="874" width="13" height="13" rx="1.5" fill="#c2332b"></rect>
 <rect x="920" y="890" width="13" height="13" rx="1.5" fill="#161a24"></rect>
-<rect x="920" y="906" width="13" height="13" rx="1.5" fill="#4a1512"></rect>
+<rect x="920" y="906" width="13" height="13" rx="1.5" fill="#8a221c"></rect>
 <g font-size="10.5px" fill="#6f7a90">
 <text x="48" y="837">Mon</text><text x="48" y="869">Wed</text><text x="48" y="901">Fri</text>
 </g>
@@ -650,7 +650,7 @@ text, tspan { white-space: pre; }
 <line x1="48" y1="1544" x2="48" y2="1930" stroke="#2a3242" stroke-width="1" stroke-dasharray="4 4"></line>
 
 <path d="M48 1552 L54 1558 L48 1564 L42 1558 Z" fill="#e0403a"></path>
-<text x="72" y="1564" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="16px" fill="#efe6d5" letter-spacing="0.8">CREATED 68 COMMITS IN 3 REPOSITORIES</text>
+<text x="72" y="1564" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="16px" fill="#efe6d5" letter-spacing="0.8">CREATED 69 COMMITS IN 3 REPOSITORIES</text>
 <text x="72" y="1590" font-size="13px" fill="#e4e1d8">university-resume</text>
 <text x="380" y="1590" font-size="12px" fill="#6f7a90">58 commits</text>
 <rect x="500" y="1581" width="260.0" height="9" fill="#e0403a"></rect>
@@ -658,8 +658,8 @@ text, tspan { white-space: pre; }
 <text x="380" y="1612" font-size="12px" fill="#6f7a90">8 commits</text>
 <rect x="500" y="1603" width="35.9" height="9" fill="#e0403a"></rect>
 <text x="72" y="1634" font-size="13px" fill="#e4e1d8">MatiasPinho</text>
-<text x="380" y="1634" font-size="12px" fill="#6f7a90">2 commits</text>
-<rect x="500" y="1625" width="9.0" height="9" fill="#e0403a"></rect>
+<text x="380" y="1634" font-size="12px" fill="#6f7a90">3 commits</text>
+<rect x="500" y="1625" width="13.4" height="9" fill="#e0403a"></rect>
 <path d="M48 1664 L54 1670 L48 1676 L42 1670 Z" fill="#e0403a"></path>
 <text x="72" y="1676" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="16px" fill="#efe6d5" letter-spacing="0.8">CREATED 1 REPOSITORY</text>
 <text x="72" y="1702" font-size="13px" fill="#e4e1d8">utn-tecnicatura-programacion</text>
