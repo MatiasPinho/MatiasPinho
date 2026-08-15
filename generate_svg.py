@@ -670,7 +670,7 @@ text, tspan { white-space: pre; }
 <rect x="12" y="712" width="961" height="266" fill="#10131b" stroke="#efe6d5" stroke-width="2.5" rx="2"></rect>
 <rect x="14" y="714" width="957" height="262" fill="url(#net)" opacity="0.5"></rect>
 <rect x="36" y="738" width="10" height="10" fill="#e0403a"></rect>
-<text x="54" y="748" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">SPIDER-SENSE // CONTRIBUTIONS</text>
+<text x="54" y="748" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">CONTRIBUTIONS</text>
 <text x="949" y="748" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">@@TOTALCONTRIB@@ CONTRIBUTIONS // LAST 12 MONTHS</text>
 <rect x="36" y="772" width="913" height="182" fill="#0b0d14" stroke="#efe6d5" stroke-width="1.5" rx="2"></rect>
 <path d="M36 772 L64 772 L36 800 Z" fill="#e0403a" opacity="0.5"></path>
