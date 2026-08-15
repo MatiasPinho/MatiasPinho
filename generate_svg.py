@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Regenerate dark_mode.svg (comic-panel theme) with live GitHub stats via the GraphQL API."""
-import json, os, sys, urllib.request
+import json, os, sys, textwrap, urllib.request
 from collections import defaultdict
 from datetime import datetime, timezone
+from xml.sax.saxutils import escape as esc
 
 USER = "MatiasPinho"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
@@ -12,6 +13,14 @@ BAR_X, BAR_W, BAR_H = 190, 310, 13
 LANG_Y0, LANG_STEP = 572, 32
 REPO_Y0, REPO_STEP, REPO_COUNT = 548, 18, 3
 REPO_NAME_MAX = 30
+
+# --- extended panels (contribution web / pinned cards / activity mix / log) ---
+CAL_X0, CAL_Y0, CAL_CELL, CAL_STEP = 88, 810, 13, 16
+CAL_RAMP = ["#161a24", "#4a1512", "#8a221c", "#c2332b", "#ff5b52"]
+MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+PIN_Y0, PIN_STEP, PIN_COUNT, PIN_DESC_W = 1046, 104, 4, 58
+MIX_Y0, MIX_STEP, MIX_W = 1058, 40, 315
+LOG_Y0, LOG_MAX_Y, LOG_BAR_W = 1558, 1926, 260
 
 
 def gql(query, variables=None):
@@ -40,23 +49,66 @@ query($login: String!) {
       totalCount
       nodes {
         name
+        description
         pushedAt
         isFork
+        isPrivate
         stargazerCount
+        primaryLanguage { name color }
         languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
           edges { size node { name } }
         }
       }
     }
     pinnedItems(first: 6, types: REPOSITORY) {
-      nodes { ... on Repository { name } }
+      nodes { ... on Repository {
+        name
+        description
+        isPrivate
+        stargazerCount
+        primaryLanguage { name color }
+      } }
     }
+    organizations { totalCount }
     repositoriesContributedTo(
       first: 1
       includeUserRepositories: false
       contributionTypes: [COMMIT, PULL_REQUEST]
     ) { totalCount }
     followers { totalCount }
+  }
+}
+"""
+
+# Everything rendered below the fold: calendar, activity mix and the monthly log.
+ACTIVITY_QUERY = """
+query($login: String!, $from: DateTime!, $to: DateTime!) {
+  user(login: $login) {
+    contributionsCollection {
+      contributionCalendar {
+        totalContributions
+        weeks { firstDay contributionDays { contributionCount weekday } }
+      }
+      totalCommitContributions
+      totalPullRequestContributions
+      totalIssueContributions
+      totalPullRequestReviewContributions
+    }
+    month: contributionsCollection(from: $from, to: $to) {
+      commitContributionsByRepository(maxRepositories: 6) {
+        repository { name }
+        contributions { totalCount }
+      }
+      repositoryContributions(first: 5) {
+        nodes { occurredAt repository { name isPrivate primaryLanguage { name } } }
+      }
+      pullRequestContributions(first: 100) {
+        nodes { pullRequest { state repository { name } } }
+      }
+      pullRequestReviewContributions(first: 3) {
+        nodes { occurredAt pullRequest { title repository { name } } }
+      }
+    }
   }
 }
 """
@@ -105,7 +157,9 @@ def fetch_stats():
     top = sorted(lang_sizes.items(), key=lambda x: -x[1])[:4]
     langs = [(name, round(size * 100 / total_bytes)) for name, size in top] or [("N/A", 100)]
 
-    pinned = [n["name"] for n in u["pinnedItems"]["nodes"] if n]
+    pinned_nodes = [n for n in u["pinnedItems"]["nodes"] if n]
+    by_name = {n["name"]: n for n in nodes}
+    pinned = [n["name"] for n in pinned_nodes]
     if len(pinned) < REPO_COUNT:  # fall back to the most recently pushed own repos
         own = sorted(
             (n for n in nodes if not n.get("isFork")),
@@ -118,6 +172,32 @@ def fetch_stats():
             if len(pinned) == REPO_COUNT:
                 break
 
+    cards = []
+    for name in pinned[:PIN_COUNT]:
+        src = next((p for p in pinned_nodes if p["name"] == name), None) or by_name.get(name) or {}
+        cards.append(
+            dict(
+                name=name,
+                description=src.get("description") or "",
+                private=bool(src.get("isPrivate")),
+                stars=src.get("stargazerCount") or 0,
+                lang=(src.get("primaryLanguage") or {}).get("name") or "",
+                color=(src.get("primaryLanguage") or {}).get("color") or "#6f7a90",
+            )
+        )
+
+    now = datetime.now(timezone.utc)
+    act = gql(
+        ACTIVITY_QUERY,
+        {
+            "login": USER,
+            "from": now.replace(day=1, hour=0, minute=0, second=0, microsecond=0).isoformat().replace("+00:00", "Z"),
+            "to": now.isoformat().replace("+00:00", "Z"),
+        },
+    )["user"]
+    coll, month = act["contributionsCollection"], act["month"]
+    cal = coll["contributionCalendar"]
+
     return dict(
         repos=u["repositories"]["totalCount"],
         stars=sum(n["stargazerCount"] for n in nodes),
@@ -126,6 +206,18 @@ def fetch_stats():
         contributed=u["repositoriesContributedTo"]["totalCount"],
         langs=langs,
         pinned=pinned,
+        cards=cards,
+        orgs=u["organizations"]["totalCount"],
+        weeks=cal["weeks"],
+        total_contributions=cal["totalContributions"],
+        mix=[
+            ("Commits", coll["totalCommitContributions"]),
+            ("Pull requests", coll["totalPullRequestContributions"]),
+            ("Issues", coll["totalIssueContributions"]),
+            ("Code review", coll["totalPullRequestReviewContributions"]),
+        ],
+        month=month,
+        month_label=f"{MONTHS[now.month - 1].upper()} {now.year}",
     )
 
 
@@ -161,8 +253,271 @@ def repo_rows(names):
     return "\n".join(parts)
 
 
+def calendar_cells(weeks):
+    """53 columns of day cells inside the comic vignette, plus month labels."""
+    cells, labels, seen = [], [], set()
+    for w, week in enumerate(weeks[-53:]):
+        x = CAL_X0 + w * CAL_STEP
+        key = week["firstDay"][:7]
+        if key not in seen and w < 51:
+            seen.add(key)
+            labels.append(f'<text x="{x}" y="800">{MONTHS[int(week["firstDay"][5:7]) - 1]}</text>')
+        for day in week["contributionDays"]:
+            c = day["contributionCount"]
+            lvl = 0 if c == 0 else 1 if c < 3 else 2 if c < 6 else 3 if c < 10 else 4
+            y = CAL_Y0 + day["weekday"] * CAL_STEP
+            cells.append(
+                f'<rect x="{x}" y="{y}" width="{CAL_CELL}" height="{CAL_CELL}" rx="1.5" fill="{CAL_RAMP[lvl]}"></rect>'
+            )
+    return '<g font-size="11px" fill="#8a93a6">' + "".join(labels) + "</g>\n" + "\n".join(cells)
+
+
+def streak_stats(weeks):
+    """Current / longest streak, best single day and active days — all from the calendar."""
+    counts = [d["contributionCount"] for week in weeks for d in week["contributionDays"]]
+    run = longest = current = active = 0
+    for c in counts:
+        if c:
+            run += 1
+            active += 1
+            longest = max(longest, run)
+        else:
+            run = 0
+    for c in reversed(counts):
+        if not c:
+            break
+        current += 1
+    return dict(current=current, longest=longest, best=max(counts or [0]), active=active)
+
+
+def streak_panel(stats):
+    """WEB-SLINGING STREAK: four Impact numbers in the GITHUB STATS rhythm."""
+    cells = (
+        (638, 1314, 1332, stats["current"], "CURRENT STREAK", 0.3),
+        (806, 1314, 1332, stats["longest"], "LONGEST STREAK", 0.45),
+        (638, 1380, 1398, stats["best"], "BEST DAY", 0.6),
+        (806, 1380, 1398, stats["active"], "ACTIVE DAYS", 0.75),
+    )
+    parts = []
+    for x, y, ly, value, label, delay in cells:
+        parts.append(
+            f'<g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out {delay}s both">\n'
+            f'<text x="{x}" y="{y}" font-family="{DISPLAY_FONT}" font-size="32px" fill="#e0403a">{value}</text>\n'
+            f'</g>\n'
+            f'<text x="{x}" y="{ly}" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">{label}</text>'
+        )
+    return "\n".join(parts)
+
+
+def pinned_cards(cards):
+    """One comic card per pinned repo: name, visibility pill, 2 description lines, language."""
+    parts = []
+    for i, r in enumerate(cards[:PIN_COUNT]):
+        y = PIN_Y0 + i * PIN_STEP
+        wrapped = textwrap.wrap(r["description"], PIN_DESC_W)
+        lines = wrapped[:2] or [""]
+        if len(wrapped) > 2:
+            lines[1] = lines[1][: PIN_DESC_W - 1] + "\u2026"
+        pill = "PRIVATE" if r["private"] else "PUBLIC"
+        p = [
+            f'<rect x="36" y="{y}" width="548" height="94" fill="#0f1219" stroke="#2a3242" stroke-width="1.2" rx="2"></rect>',
+            f'<rect x="36" y="{y}" width="3" height="94" fill="#e0403a"></rect>',
+            f'<text x="56" y="{y + 28}" font-family="{DISPLAY_FONT}" font-size="17px" fill="#efe6d5" letter-spacing="0.8">{esc(r["name"])}</text>',
+            f'<rect x="508" y="{y + 12}" width="62" height="18" fill="none" stroke="#3b4557" stroke-width="1" rx="9"></rect>',
+            f'<text x="539" y="{y + 25}" text-anchor="middle" font-size="9.5px" fill="#8a93a6" letter-spacing="1.2">{pill}</text>',
+        ]
+        for j, line in enumerate(lines):
+            p.append(f'<text x="56" y="{y + 52 + j * 18}" font-size="12px" fill="#8a93a6">{esc(line)}</text>')
+        if r["lang"]:
+            p.append(f'<circle cx="60" cy="{y + 82}" r="4.5" fill="{r["color"]}"></circle>')
+            p.append(f'<text x="72" y="{y + 86}" font-size="12px" fill="#e4e1d8">{esc(r["lang"])}</text>')
+        if r["stars"]:
+            cy = y + 78
+            p.append(
+                f'<path d="M552 {cy} L554 {cy + 4.5} L559 {cy + 5} L555.2 {cy + 8.2} L556.4 {cy + 13} '
+                f'L552 {cy + 10.4} L547.6 {cy + 13} L548.8 {cy + 8.2} L545 {cy + 5} L550 {cy + 4.5} Z" fill="#e0403a"></path>'
+            )
+            p.append(f'<text x="540" y="{y + 86}" text-anchor="end" font-size="12px" fill="#e4e1d8">{r["stars"]}</text>')
+        parts.append("\n".join(p))
+    return "\n".join(parts)
+
+
+def mix_rows(mix):
+    """Commits / PRs / issues / reviews as percentages of the year's contributions."""
+    total = sum(v for _, v in mix) or 1
+    parts = []
+    for i, (label, value) in enumerate(mix):
+        y = MIX_Y0 + i * MIX_STEP
+        pct = round(value * 100 / total)
+        parts.append(
+            f'<text x="638" y="{y}" font-size="12.5px" fill="#e4e1d8">{label}</text>\n'
+            f'<text x="953" y="{y}" text-anchor="end" font-family="{DISPLAY_FONT}" font-size="15px" fill="#efe6d5">{pct}%</text>\n'
+            f'<rect x="638" y="{y + 8}" width="{MIX_W}" height="10" fill="#171b26" stroke="#2a3242" stroke-width="1"></rect>'
+            + (
+                f'\n<rect x="638" y="{y + 8}" width="{round(pct * MIX_W / 100, 1)}" height="10" fill="#e0403a" '
+                f'style="transform-box:fill-box;transform-origin:0% 50%;animation:sw-bar 1s cubic-bezier(.2,.9,.3,1) {0.5 + i * 0.15:.2f}s both"></rect>'
+                if pct
+                else ""
+            )
+        )
+    return "\n".join(parts)
+
+
+def _log_head(y, title):
+    return (
+        f'<path d="M48 {y - 6} L54 {y} L48 {y + 6} L42 {y} Z" fill="#e0403a"></path>\n'
+        f'<text x="72" y="{y + 6}" font-family="{DISPLAY_FONT}" font-size="16px" fill="#efe6d5" letter-spacing="0.8">{esc(title)}</text>'
+    )
+
+
+def _log_row(y, left, mid="", right="", frac=None, pills=()):
+    p = [f'<text x="72" y="{y}" font-size="13px" fill="#e4e1d8">{esc(left)}</text>']
+    if mid:
+        p.append(f'<text x="380" y="{y}" font-size="12px" fill="#6f7a90">{esc(mid)}</text>')
+    if right:
+        p.append(f'<text x="949" y="{y}" text-anchor="end" font-size="12px" fill="#6f7a90">{esc(right)}</text>')
+    if frac is not None:
+        p.append(f'<rect x="500" y="{y - 9}" width="{max(3, round(LOG_BAR_W * frac, 1))}" height="9" fill="#e0403a"></rect>')
+    x = 380
+    for label, kind in pills:
+        w = 12 + 7 * len(label)
+        fill, stroke, color = {
+            "open": ("none", "#e0403a", "#e0403a"),
+            "merged": ("#e0403a", "none", "#efe6d5"),
+            "closed": ("none", "#3b4557", "#8a93a6"),
+        }[kind]
+        p.append(
+            f'<rect x="{x}" y="{y - 11}" width="{w}" height="17" fill="{fill}" stroke="{stroke}" stroke-width="1" rx="2"></rect>\n'
+            f'<text x="{x + w / 2}" y="{y + 2}" text-anchor="middle" font-size="11px" fill="{color}" letter-spacing="0.6">{esc(label)}</text>'
+        )
+        x += w + 8
+    return "\n".join(p)
+
+
+def _shorten(value, limit):
+    value = value or ""
+    return value if len(value) <= limit else value[: limit - 1] + "\u2026"
+
+
+def _activity_date(value):
+    if not value:
+        return ""
+    stamp = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    return f"{MONTHS[stamp.month - 1].upper()} {stamp.day}"
+
+
+def activity_log(month):
+    """Build the compact monthly timeline rendered at the bottom of the SVG."""
+    sections = []
+
+    commit_items = []
+    for item in month.get("commitContributionsByRepository", []):
+        repository = item.get("repository") or {}
+        count = (item.get("contributions") or {}).get("totalCount") or 0
+        if count:
+            commit_items.append((repository.get("name") or "Private repository", count))
+    if commit_items:
+        maximum = max(count for _, count in commit_items) or 1
+        total = sum(count for _, count in commit_items)
+        rows = [
+            dict(
+                left=name,
+                mid=f"{count} {'commit' if count == 1 else 'commits'}",
+                frac=count / maximum,
+            )
+            for name, count in commit_items[:4]
+        ]
+        repo_word = "REPOSITORY" if len(commit_items) == 1 else "REPOSITORIES"
+        sections.append((f"CREATED {total} COMMITS IN {len(commit_items)} {repo_word}", rows))
+
+    repository_nodes = (month.get("repositoryContributions") or {}).get("nodes") or []
+    if repository_nodes:
+        rows = []
+        for node in repository_nodes[:2]:
+            repository = node.get("repository") or {}
+            visibility = "private" if repository.get("isPrivate") else "public"
+            language = (repository.get("primaryLanguage") or {}).get("name") or ""
+            detail = visibility + (f" // {language}" if language else "")
+            rows.append(
+                dict(
+                    left=repository.get("name") or "Private repository",
+                    mid=detail,
+                    right=_activity_date(node.get("occurredAt")),
+                )
+            )
+        repo_word = "REPOSITORY" if len(repository_nodes) == 1 else "REPOSITORIES"
+        sections.append((f"CREATED {len(repository_nodes)} {repo_word}", rows))
+
+    pull_requests = [
+        node.get("pullRequest") or {}
+        for node in (month.get("pullRequestContributions") or {}).get("nodes") or []
+    ]
+    if pull_requests:
+        by_repository = {}
+        for pull_request in pull_requests:
+            repository = (pull_request.get("repository") or {}).get("name") or "Private repository"
+            state = (pull_request.get("state") or "CLOSED").lower()
+            if state not in {"open", "merged", "closed"}:
+                state = "closed"
+            counts = by_repository.setdefault(repository, {"open": 0, "merged": 0, "closed": 0})
+            counts[state] += 1
+        rows = []
+        for repository, counts in list(by_repository.items())[:2]:
+            pills = tuple(
+                (f"{counts[state]} {state.upper()}", state)
+                for state in ("open", "merged", "closed")
+                if counts[state]
+            )
+            rows.append(dict(left=repository, pills=pills))
+        pr_word = "PULL REQUEST" if len(pull_requests) == 1 else "PULL REQUESTS"
+        repo_word = "REPOSITORY" if len(by_repository) == 1 else "REPOSITORIES"
+        sections.append(
+            (f"OPENED {len(pull_requests)} {pr_word} IN {len(by_repository)} {repo_word}", rows)
+        )
+
+    reviews = (month.get("pullRequestReviewContributions") or {}).get("nodes") or []
+    if reviews:
+        rows = []
+        review_repositories = set()
+        for node in reviews[:1]:
+            pull_request = node.get("pullRequest") or {}
+            repository = (pull_request.get("repository") or {}).get("name") or "Private repository"
+            review_repositories.add(repository)
+            rows.append(
+                dict(
+                    left=repository,
+                    mid=_shorten(pull_request.get("title"), 44),
+                    right=_activity_date(node.get("occurredAt")),
+                )
+            )
+        review_word = "PULL REQUEST" if len(reviews) == 1 else "PULL REQUESTS"
+        repo_word = "REPOSITORY" if len(review_repositories) == 1 else "REPOSITORIES"
+        sections.append(
+            (f"REVIEWED {len(reviews)} {review_word} IN {len(review_repositories)} {repo_word}", rows)
+        )
+
+    if not sections:
+        return '<text x="72" y="1584" font-size="13px" fill="#8a93a6">No public activity this month.</text>'
+
+    parts = []
+    y = LOG_Y0
+    for index, (title, rows) in enumerate(sections):
+        if index:
+            y += 14
+        if y + 32 > LOG_MAX_Y:
+            break
+        parts.append(_log_head(y, title))
+        y += 32
+        for row in rows:
+            if y > LOG_MAX_Y:
+                break
+            parts.append(_log_row(y, **row))
+            y += 22
+    return "\n".join(parts)
+
+
 SVG_TEMPLATE = r"""<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="985" height="710" viewBox="0 0 985 710" font-family="ConsolasFallback,Consolas,monospace" font-size="16px">
+<svg xmlns="http://www.w3.org/2000/svg" width="985" height="1962" viewBox="0 0 985 1962" font-family="ConsolasFallback,Consolas,monospace" font-size="16px">
 <style>
 @font-face { src: local('Consolas'), local('Consolas Bold'); font-family: 'ConsolasFallback'; font-display: swap; size-adjust: 109%; }
 text, tspan { white-space: pre; }
@@ -188,7 +543,7 @@ text, tspan { white-space: pre; }
 <clipPath id="clipTitle"><rect x="12" y="12" width="961" height="126" rx="2"></rect></clipPath>
 </defs>
 
-<rect width="985" height="710" fill="#0b0d14" rx="10"></rect>
+<rect width="985" height="1962" fill="#0b0d14" rx="10"></rect>
 
 <rect x="15" y="15" width="961" height="126" fill="#e0403a" opacity="0.35" rx="2"></rect>
 <rect x="12" y="12" width="961" height="126" fill="#10131b" stroke="#efe6d5" stroke-width="2.5" rx="2"></rect>
@@ -312,11 +667,76 @@ text, tspan { white-space: pre; }
 <rect x="620.5" y="608.5" width="350" height="87" fill="url(#netLite)"></rect>
 <text x="795" y="646" text-anchor="middle" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="20px" fill="#efe6d5" stroke="#5c1310" stroke-width="3" paint-order="stroke" letter-spacing="0.6">YOU WILL BE WHAT YOU MUST BE,</text>
 <text x="795" y="674" text-anchor="middle" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="20px" fill="#efe6d5" stroke="#5c1310" stroke-width="3" paint-order="stroke" letter-spacing="0.6">OR YOU WILL BE NOTHING.</text>
+<rect x="12" y="712" width="961" height="266" fill="#10131b" stroke="#efe6d5" stroke-width="2.5" rx="2"></rect>
+<rect x="14" y="714" width="957" height="262" fill="url(#net)" opacity="0.5"></rect>
+<rect x="36" y="738" width="10" height="10" fill="#e0403a"></rect>
+<text x="54" y="748" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">SPIDER-SENSE // CONTRIBUTIONS</text>
+<text x="949" y="748" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">@@TOTALCONTRIB@@ CONTRIBUTIONS // LAST 12 MONTHS</text>
+<rect x="36" y="772" width="913" height="182" fill="#0b0d14" stroke="#efe6d5" stroke-width="1.5" rx="2"></rect>
+<path d="M36 772 L64 772 L36 800 Z" fill="#e0403a" opacity="0.5"></path>
+<path d="M949 954 L921 954 L949 926 Z" fill="#e0403a" opacity="0.5"></path>
+@@CALENDAR@@
+<g font-size="10.5px" fill="#6f7a90">
+<text x="48" y="837">Mon</text><text x="48" y="869">Wed</text><text x="48" y="901">Fri</text>
+</g>
+<text x="770" y="942" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">LESS</text>
+<rect x="780" y="931" width="13" height="13" rx="1.5" fill="#161a24"></rect>
+<rect x="797" y="931" width="13" height="13" rx="1.5" fill="#4a1512"></rect>
+<rect x="814" y="931" width="13" height="13" rx="1.5" fill="#8a221c"></rect>
+<rect x="831" y="931" width="13" height="13" rx="1.5" fill="#c2332b"></rect>
+<rect x="848" y="931" width="13" height="13" rx="1.5" fill="#ff5b52"></rect>
+<text x="872" y="942" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">MORE</text>
+
+<rect x="12" y="990" width="596" height="486" fill="#10131b" stroke="#efe6d5" stroke-width="2.5" rx="2"></rect>
+<rect x="14" y="992" width="592" height="482" fill="url(#net)" opacity="0.5"></rect>
+<rect x="36" y="1012" width="10" height="10" fill="#e0403a"></rect>
+<text x="54" y="1022" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">PINNED REPOS</text>
+<text x="584" y="1022" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">@@PINCOUNT@@ SELECTED</text>
+
+@@PINNEDCARDS@@
+
+<rect x="618" y="990" width="355" height="230" fill="#10131b" stroke="#efe6d5" stroke-width="2.5" rx="2"></rect>
+<rect x="638" y="1012" width="10" height="10" fill="#e0403a"></rect>
+<text x="656" y="1022" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">ACTIVITY MIX</text>
+@@MIX@@
+
+<rect x="618" y="1232" width="355" height="244" fill="#10131b" stroke="#efe6d5" stroke-width="2.5" rx="2"></rect>
+<rect x="620" y="1234" width="351" height="240" fill="url(#net)" opacity="0.5"></rect>
+<rect x="638" y="1254" width="10" height="10" fill="#e0403a"></rect>
+<text x="656" y="1264" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">WEB-SLINGING STREAK</text>
+@@STREAK@@
+<line x1="638" y1="1422" x2="953" y2="1422" stroke="#2a3242" stroke-width="1"></line>
+<text x="638" y="1444" font-size="10.5px" fill="#e0403a" letter-spacing="1.8">ORGANIZATIONS</text>
+<text x="638" y="1464" font-size="13px" fill="#e4e1d8">Member of @@ORGS@@ organization(s)</text>
+
+<rect x="12" y="1488" width="961" height="462" fill="#10131b" stroke="#efe6d5" stroke-width="2.5" rx="2"></rect>
+<rect x="14" y="1490" width="957" height="458" fill="url(#net)" opacity="0.5"></rect>
+<rect x="36" y="1510" width="10" height="10" fill="#e0403a"></rect>
+<text x="54" y="1520" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">ACTIVITY LOG</text>
+<text x="949" y="1520" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">@@LOGMONTH@@</text>
+<line x1="48" y1="1544" x2="48" y2="1930" stroke="#2a3242" stroke-width="1" stroke-dasharray="4 4"></line>
+
+@@LOG@@
 </svg>
 """
 
 
-def build_svg(repos, stars, followers, commits, contributed, langs, pinned):
+def build_svg(
+    repos,
+    stars,
+    followers,
+    commits,
+    contributed,
+    langs,
+    pinned,
+    cards,
+    orgs,
+    weeks,
+    total_contributions,
+    mix,
+    month,
+    month_label,
+):
     svg = SVG_TEMPLATE
     for token, value in (
         ("@@REPOS@@", repos),
@@ -326,6 +746,15 @@ def build_svg(repos, stars, followers, commits, contributed, langs, pinned):
         ("@@CONTRIB@@", contributed),
         ("@@LANGS@@", lang_rows(langs)),
         ("@@REPOLIST@@", repo_rows(pinned)),
+        ("@@TOTALCONTRIB@@", total_contributions),
+        ("@@CALENDAR@@", calendar_cells(weeks)),
+        ("@@PINCOUNT@@", len(cards)),
+        ("@@PINNEDCARDS@@", pinned_cards(cards)),
+        ("@@MIX@@", mix_rows(mix)),
+        ("@@STREAK@@", streak_panel(streak_stats(weeks))),
+        ("@@ORGS@@", orgs),
+        ("@@LOGMONTH@@", month_label),
+        ("@@LOG@@", activity_log(month)),
     ):
         svg = svg.replace(token, str(value))
     return svg
@@ -340,4 +769,8 @@ if __name__ == "__main__":
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dark_mode.svg")
     with open(out, "w", encoding="utf-8") as f:
         f.write(svg)
-    print(f"dark_mode.svg written — {stats}")
+    print(
+        "dark_mode.svg written — "
+        f"{stats['repos']} repos, {stats['commits']} commits, "
+        f"{stats['total_contributions']} contributions"
+    )
