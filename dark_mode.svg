@@ -98,13 +98,13 @@ text, tspan { white-space: pre; }
 <rect x="618" y="148" width="355" height="166" fill="#10131b" stroke="#efe6d5" stroke-width="2.5" rx="2"></rect>
 <rect x="638" y="170" width="10" height="10" fill="#e0403a"></rect>
 <text x="656" y="180" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">GITHUB STATS</text>
-<text x="953" y="180" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">CONTRIBUTED: 1</text>
+<text x="953" y="180" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">CONTRIBUTED: 0</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out .3s both">
 <text x="638" y="228" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="36px" fill="#e0403a">9</text>
 </g>
 <text x="638" y="244" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">REPOS</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out .45s both">
-<text x="806" y="228" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="36px" fill="#e0403a">978</text>
+<text x="806" y="228" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="36px" fill="#e0403a">979</text>
 </g>
 <text x="806" y="244" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">COMMITS</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out .6s both">
@@ -142,8 +142,8 @@ text, tspan { white-space: pre; }
 <text x="572" y="573" text-anchor="end" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="17px" fill="#efe6d5">39%</text>
 <text x="36" y="604" font-size="14px" fill="#e4e1d8">TypeScript</text>
 <rect x="190" y="593" width="310" height="13" fill="#171b26" stroke="#2a3242" stroke-width="1"></rect>
-<rect x="190" y="593" width="83.7" height="13" fill="#e0403a" style="transform-box:fill-box;transform-origin:0% 50%;animation:sw-bar 1s cubic-bezier(.2,.9,.3,1) 0.65s both"></rect>
-<text x="572" y="605" text-anchor="end" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="17px" fill="#efe6d5">27%</text>
+<rect x="190" y="593" width="80.6" height="13" fill="#e0403a" style="transform-box:fill-box;transform-origin:0% 50%;animation:sw-bar 1s cubic-bezier(.2,.9,.3,1) 0.65s both"></rect>
+<text x="572" y="605" text-anchor="end" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="17px" fill="#efe6d5">26%</text>
 <text x="36" y="636" font-size="14px" fill="#e4e1d8">HTML</text>
 <rect x="190" y="625" width="310" height="13" fill="#171b26" stroke="#2a3242" stroke-width="1"></rect>
 <rect x="190" y="625" width="62.0" height="13" fill="#e0403a" style="transform-box:fill-box;transform-origin:0% 50%;animation:sw-bar 1s cubic-bezier(.2,.9,.3,1) 0.8s both"></rect>
@@ -173,7 +173,7 @@ text, tspan { white-space: pre; }
 <rect x="14" y="714" width="957" height="262" fill="url(#net)" opacity="0.5"></rect>
 <rect x="36" y="738" width="10" height="10" fill="#e0403a"></rect>
 <text x="54" y="748" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">SPIDER-SENSE // CONTRIBUTIONS</text>
-<text x="949" y="748" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">429 CONTRIBUTIONS // LAST 12 MONTHS</text>
+<text x="949" y="748" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">430 CONTRIBUTIONS // LAST 12 MONTHS</text>
 <rect x="36" y="772" width="913" height="182" fill="#0b0d14" stroke="#efe6d5" stroke-width="1.5" rx="2"></rect>
 <path d="M36 772 L64 772 L36 800 Z" fill="#e0403a" opacity="0.5"></path>
 <path d="M949 954 L921 954 L949 926 Z" fill="#e0403a" opacity="0.5"></path>
@@ -226,8 +226,8 @@ text, tspan { white-space: pre; }
 <rect x="184" y="858" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="184" y="874" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="184" y="890" width="13" height="13" rx="1.5" fill="#161a24"></rect>
-<rect x="184" y="906" width="13" height="13" rx="1.5" fill="#4a1512"></rect>
-<rect x="200" y="810" width="13" height="13" rx="1.5" fill="#161a24"></rect>
+<rect x="184" y="906" width="13" height="13" rx="1.5" fill="#161a24"></rect>
+<rect x="200" y="810" width="13" height="13" rx="1.5" fill="#4a1512"></rect>
 <rect x="200" y="826" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="200" y="842" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="200" y="858" width="13" height="13" rx="1.5" fill="#161a24"></rect>
@@ -276,7 +276,7 @@ text, tspan { white-space: pre; }
 <rect x="296" y="874" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="296" y="890" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="296" y="906" width="13" height="13" rx="1.5" fill="#4a1512"></rect>
-<rect x="312" y="810" width="13" height="13" rx="1.5" fill="#161a24"></rect>
+<rect x="312" y="810" width="13" height="13" rx="1.5" fill="#4a1512"></rect>
 <rect x="312" y="826" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="312" y="842" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="312" y="858" width="13" height="13" rx="1.5" fill="#161a24"></rect>
@@ -537,7 +537,7 @@ text, tspan { white-space: pre; }
 <rect x="888" y="906" width="13" height="13" rx="1.5" fill="#4a1512"></rect>
 <rect x="904" y="810" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="904" y="826" width="13" height="13" rx="1.5" fill="#8a221c"></rect>
-<rect x="904" y="842" width="13" height="13" rx="1.5" fill="#c2332b"></rect>
+<rect x="904" y="842" width="13" height="13" rx="1.5" fill="#8a221c"></rect>
 <rect x="904" y="858" width="13" height="13" rx="1.5" fill="#8a221c"></rect>
 <rect x="904" y="874" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="904" y="890" width="13" height="13" rx="1.5" fill="#c2332b"></rect>
@@ -604,9 +604,9 @@ text, tspan { white-space: pre; }
 <rect x="638" y="1012" width="10" height="10" fill="#e0403a"></rect>
 <text x="656" y="1022" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">ACTIVITY MIX</text>
 <text x="638" y="1058" font-size="12.5px" fill="#e4e1d8">Commits</text>
-<text x="953" y="1058" text-anchor="end" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="15px" fill="#efe6d5">75%</text>
+<text x="953" y="1058" text-anchor="end" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="15px" fill="#efe6d5">76%</text>
 <rect x="638" y="1066" width="315" height="10" fill="#171b26" stroke="#2a3242" stroke-width="1"></rect>
-<rect x="638" y="1066" width="236.2" height="10" fill="#e0403a" style="transform-box:fill-box;transform-origin:0% 50%;animation:sw-bar 1s cubic-bezier(.2,.9,.3,1) 0.50s both"></rect>
+<rect x="638" y="1066" width="239.4" height="10" fill="#e0403a" style="transform-box:fill-box;transform-origin:0% 50%;animation:sw-bar 1s cubic-bezier(.2,.9,.3,1) 0.50s both"></rect>
 <text x="638" y="1098" font-size="12.5px" fill="#e4e1d8">Pull requests</text>
 <text x="953" y="1098" text-anchor="end" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="15px" fill="#efe6d5">24%</text>
 <rect x="638" y="1106" width="315" height="10" fill="#171b26" stroke="#2a3242" stroke-width="1"></rect>
@@ -635,12 +635,12 @@ text, tspan { white-space: pre; }
 </g>
 <text x="638" y="1398" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">BEST DAY</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out 0.75s both">
-<text x="806" y="1380" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="32px" fill="#e0403a">58</text>
+<text x="806" y="1380" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="32px" fill="#e0403a">59</text>
 </g>
 <text x="806" y="1398" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">ACTIVE DAYS</text>
 <line x1="638" y1="1422" x2="953" y2="1422" stroke="#2a3242" stroke-width="1"></line>
 <text x="638" y="1444" font-size="10.5px" fill="#e0403a" letter-spacing="1.8">ORGANIZATIONS</text>
-<text x="638" y="1464" font-size="13px" fill="#e4e1d8">Member of 1 organization(s)</text>
+<text x="638" y="1464" font-size="13px" fill="#e4e1d8">Member of 0 organization(s)</text>
 
 <rect x="12" y="1488" width="961" height="462" fill="#10131b" stroke="#efe6d5" stroke-width="2.5" rx="2"></rect>
 <rect x="14" y="1490" width="957" height="458" fill="url(#net)" opacity="0.5"></rect>
@@ -650,7 +650,7 @@ text, tspan { white-space: pre; }
 <line x1="48" y1="1544" x2="48" y2="1930" stroke="#2a3242" stroke-width="1" stroke-dasharray="4 4"></line>
 
 <path d="M48 1552 L54 1558 L48 1564 L42 1558 Z" fill="#e0403a"></path>
-<text x="72" y="1564" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="16px" fill="#efe6d5" letter-spacing="0.8">CREATED 67 COMMITS IN 3 REPOSITORIES</text>
+<text x="72" y="1564" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="16px" fill="#efe6d5" letter-spacing="0.8">CREATED 68 COMMITS IN 3 REPOSITORIES</text>
 <text x="72" y="1590" font-size="13px" fill="#e4e1d8">university-resume</text>
 <text x="380" y="1590" font-size="12px" fill="#6f7a90">58 commits</text>
 <rect x="500" y="1581" width="260.0" height="9" fill="#e0403a"></rect>
@@ -658,8 +658,8 @@ text, tspan { white-space: pre; }
 <text x="380" y="1612" font-size="12px" fill="#6f7a90">8 commits</text>
 <rect x="500" y="1603" width="35.9" height="9" fill="#e0403a"></rect>
 <text x="72" y="1634" font-size="13px" fill="#e4e1d8">MatiasPinho</text>
-<text x="380" y="1634" font-size="12px" fill="#6f7a90">1 commit</text>
-<rect x="500" y="1625" width="4.5" height="9" fill="#e0403a"></rect>
+<text x="380" y="1634" font-size="12px" fill="#6f7a90">2 commits</text>
+<rect x="500" y="1625" width="9.0" height="9" fill="#e0403a"></rect>
 <path d="M48 1664 L54 1670 L48 1676 L42 1670 Z" fill="#e0403a"></path>
 <text x="72" y="1676" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="16px" fill="#efe6d5" letter-spacing="0.8">CREATED 1 REPOSITORY</text>
 <text x="72" y="1702" font-size="13px" fill="#e4e1d8">utn-tecnicatura-programacion</text>
