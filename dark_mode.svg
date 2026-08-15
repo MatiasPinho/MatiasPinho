@@ -98,13 +98,13 @@ text, tspan { white-space: pre; }
 <rect x="618" y="148" width="355" height="166" fill="#10131b" stroke="#efe6d5" stroke-width="2.5" rx="2"></rect>
 <rect x="638" y="170" width="10" height="10" fill="#e0403a"></rect>
 <text x="656" y="180" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">GITHUB STATS</text>
-<text x="953" y="180" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">CONTRIBUTED: 1</text>
+<text x="953" y="180" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">CONTRIBUTED: 0</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out .3s both">
 <text x="638" y="228" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="36px" fill="#e0403a">17</text>
 </g>
 <text x="638" y="244" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">REPOS</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out .45s both">
-<text x="806" y="228" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="36px" fill="#e0403a">995</text>
+<text x="806" y="228" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="36px" fill="#e0403a">996</text>
 </g>
 <text x="806" y="244" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">COMMITS</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out .6s both">
