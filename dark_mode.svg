@@ -173,7 +173,7 @@ text, tspan { white-space: pre; }
 <rect x="14" y="714" width="957" height="262" fill="url(#net)" opacity="0.5"></rect>
 <rect x="36" y="738" width="10" height="10" fill="#e0403a"></rect>
 <text x="54" y="748" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">CONTRIBUTIONS</text>
-<text x="949" y="748" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">527 CONTRIBUTIONS // LAST 12 MONTHS</text>
+<text x="949" y="748" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">528 CONTRIBUTIONS // LAST 12 MONTHS</text>
 <rect x="36" y="772" width="913" height="182" fill="#0b0d14" stroke="#efe6d5" stroke-width="1.5" rx="2"></rect>
 <path d="M36 772 L64 772 L36 800 Z" fill="#e0403a" opacity="0.5"></path>
 <path d="M949 954 L921 954 L949 926 Z" fill="#e0403a" opacity="0.5"></path>
@@ -662,12 +662,14 @@ text, tspan { white-space: pre; }
 <text x="380" y="1702" font-size="12px" fill="#6f7a90">public</text>
 <text x="949" y="1702" text-anchor="end" font-size="12px" fill="#6f7a90">AUG 8</text>
 <path d="M48 1732 L54 1738 L48 1744 L42 1738 Z" fill="#e0403a"></path>
-<text x="72" y="1744" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="16px" fill="#efe6d5" letter-spacing="0.8">OPENED 37 PULL REQUESTS IN 2 REPOSITORIES</text>
+<text x="72" y="1744" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="16px" fill="#efe6d5" letter-spacing="0.8">OPENED 38 PULL REQUESTS IN 2 REPOSITORIES</text>
 <text x="72" y="1770" font-size="13px" fill="#e4e1d8">carpeta</text>
-<rect x="380" y="1759" width="75" height="17" fill="#e0403a" stroke="none" stroke-width="1" rx="2"></rect>
-<text x="417.5" y="1772" text-anchor="middle" font-size="11px" fill="#efe6d5" letter-spacing="0.6">29 MERGED</text>
-<rect x="463" y="1759" width="68" height="17" fill="none" stroke="#3b4557" stroke-width="1" rx="2"></rect>
-<text x="497.0" y="1772" text-anchor="middle" font-size="11px" fill="#8a93a6" letter-spacing="0.6">7 CLOSED</text>
+<rect x="380" y="1759" width="54" height="17" fill="none" stroke="#e0403a" stroke-width="1" rx="2"></rect>
+<text x="407.0" y="1772" text-anchor="middle" font-size="11px" fill="#e0403a" letter-spacing="0.6">1 OPEN</text>
+<rect x="442" y="1759" width="75" height="17" fill="#e0403a" stroke="none" stroke-width="1" rx="2"></rect>
+<text x="479.5" y="1772" text-anchor="middle" font-size="11px" fill="#efe6d5" letter-spacing="0.6">29 MERGED</text>
+<rect x="525" y="1759" width="68" height="17" fill="none" stroke="#3b4557" stroke-width="1" rx="2"></rect>
+<text x="559.0" y="1772" text-anchor="middle" font-size="11px" fill="#8a93a6" letter-spacing="0.6">7 CLOSED</text>
 <text x="72" y="1792" font-size="13px" fill="#e4e1d8">BugLens</text>
 <rect x="380" y="1781" width="54" height="17" fill="none" stroke="#e0403a" stroke-width="1" rx="2"></rect>
 <text x="407.0" y="1794" text-anchor="middle" font-size="11px" fill="#e0403a" letter-spacing="0.6">1 OPEN</text>
