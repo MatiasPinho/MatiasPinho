@@ -544,6 +544,7 @@ text, tspan { white-space: pre; }
 <rect x="904" y="906" width="13" height="13" rx="1.5" fill="#8a221c"></rect>
 <rect x="920" y="810" width="13" height="13" rx="1.5" fill="#ff5b52"></rect>
 <rect x="920" y="826" width="13" height="13" rx="1.5" fill="#161a24"></rect>
+<rect x="920" y="842" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <g font-size="10.5px" fill="#6f7a90">
 <text x="48" y="837">Mon</text><text x="48" y="869">Wed</text><text x="48" y="901">Fri</text>
 </g>
