@@ -173,7 +173,7 @@ text, tspan { white-space: pre; }
 <rect x="14" y="714" width="957" height="262" fill="url(#net)" opacity="0.5"></rect>
 <rect x="36" y="738" width="10" height="10" fill="#e0403a"></rect>
 <text x="54" y="748" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">CONTRIBUTIONS</text>
-<text x="949" y="748" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">528 CONTRIBUTIONS // LAST 12 MONTHS</text>
+<text x="949" y="748" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">529 CONTRIBUTIONS // LAST 12 MONTHS</text>
 <rect x="36" y="772" width="913" height="182" fill="#0b0d14" stroke="#efe6d5" stroke-width="1.5" rx="2"></rect>
 <path d="M36 772 L64 772 L36 800 Z" fill="#e0403a" opacity="0.5"></path>
 <path d="M949 954 L921 954 L949 926 Z" fill="#e0403a" opacity="0.5"></path>
@@ -544,7 +544,7 @@ text, tspan { white-space: pre; }
 <rect x="904" y="906" width="13" height="13" rx="1.5" fill="#8a221c"></rect>
 <rect x="920" y="810" width="13" height="13" rx="1.5" fill="#ff5b52"></rect>
 <rect x="920" y="826" width="13" height="13" rx="1.5" fill="#161a24"></rect>
-<rect x="920" y="842" width="13" height="13" rx="1.5" fill="#161a24"></rect>
+<rect x="920" y="842" width="13" height="13" rx="1.5" fill="#4a1512"></rect>
 <g font-size="10.5px" fill="#6f7a90">
 <text x="48" y="837">Mon</text><text x="48" y="869">Wed</text><text x="48" y="901">Fri</text>
 </g>
@@ -601,9 +601,9 @@ text, tspan { white-space: pre; }
 <rect x="638" y="1012" width="10" height="10" fill="#e0403a"></rect>
 <text x="656" y="1022" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">ACTIVITY MIX</text>
 <text x="638" y="1058" font-size="12.5px" fill="#e4e1d8">Commits</text>
-<text x="953" y="1058" text-anchor="end" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="15px" fill="#efe6d5">81%</text>
+<text x="953" y="1058" text-anchor="end" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="15px" fill="#efe6d5">80%</text>
 <rect x="638" y="1066" width="315" height="10" fill="#171b26" stroke="#2a3242" stroke-width="1"></rect>
-<rect x="638" y="1066" width="255.2" height="10" fill="#e0403a" style="transform-box:fill-box;transform-origin:0% 50%;animation:sw-bar 1s cubic-bezier(.2,.9,.3,1) 0.50s both"></rect>
+<rect x="638" y="1066" width="252.0" height="10" fill="#e0403a" style="transform-box:fill-box;transform-origin:0% 50%;animation:sw-bar 1s cubic-bezier(.2,.9,.3,1) 0.50s both"></rect>
 <text x="638" y="1098" font-size="12.5px" fill="#e4e1d8">Pull requests</text>
 <text x="953" y="1098" text-anchor="end" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="15px" fill="#efe6d5">19%</text>
 <rect x="638" y="1106" width="315" height="10" fill="#171b26" stroke="#2a3242" stroke-width="1"></rect>
@@ -620,7 +620,7 @@ text, tspan { white-space: pre; }
 <rect x="638" y="1254" width="10" height="10" fill="#e0403a"></rect>
 <text x="656" y="1264" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">WEB-SLINGING STREAK</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out 0.3s both">
-<text x="638" y="1314" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="32px" fill="#e0403a">0</text>
+<text x="638" y="1314" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="32px" fill="#e0403a">1</text>
 </g>
 <text x="638" y="1332" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">CURRENT STREAK</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out 0.45s both">
@@ -632,7 +632,7 @@ text, tspan { white-space: pre; }
 </g>
 <text x="638" y="1398" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">BEST DAY</text>
 <g style="transform-box:fill-box;transform-origin:0% 100%;animation:sw-pop .5s ease-out 0.75s both">
-<text x="806" y="1380" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="32px" fill="#e0403a">60</text>
+<text x="806" y="1380" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="32px" fill="#e0403a">61</text>
 </g>
 <text x="806" y="1398" font-size="10.5px" fill="#8a93a6" letter-spacing="1.8">ACTIVE DAYS</text>
 <line x1="638" y1="1422" x2="953" y2="1422" stroke="#2a3242" stroke-width="1"></line>
@@ -663,10 +663,10 @@ text, tspan { white-space: pre; }
 <text x="380" y="1702" font-size="12px" fill="#6f7a90">public</text>
 <text x="949" y="1702" text-anchor="end" font-size="12px" fill="#6f7a90">AUG 8</text>
 <path d="M48 1732 L54 1738 L48 1744 L42 1738 Z" fill="#e0403a"></path>
-<text x="72" y="1744" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="16px" fill="#efe6d5" letter-spacing="0.8">OPENED 38 PULL REQUESTS IN 2 REPOSITORIES</text>
+<text x="72" y="1744" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="16px" fill="#efe6d5" letter-spacing="0.8">OPENED 39 PULL REQUESTS IN 2 REPOSITORIES</text>
 <text x="72" y="1770" font-size="13px" fill="#e4e1d8">carpeta</text>
 <rect x="380" y="1759" width="54" height="17" fill="none" stroke="#e0403a" stroke-width="1" rx="2"></rect>
-<text x="407.0" y="1772" text-anchor="middle" font-size="11px" fill="#e0403a" letter-spacing="0.6">1 OPEN</text>
+<text x="407.0" y="1772" text-anchor="middle" font-size="11px" fill="#e0403a" letter-spacing="0.6">2 OPEN</text>
 <rect x="442" y="1759" width="75" height="17" fill="#e0403a" stroke="none" stroke-width="1" rx="2"></rect>
 <text x="479.5" y="1772" text-anchor="middle" font-size="11px" fill="#efe6d5" letter-spacing="0.6">29 MERGED</text>
 <rect x="525" y="1759" width="68" height="17" fill="none" stroke="#3b4557" stroke-width="1" rx="2"></rect>
