@@ -546,6 +546,7 @@ text, tspan { white-space: pre; }
 <rect x="920" y="826" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="920" y="842" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <rect x="920" y="858" width="13" height="13" rx="1.5" fill="#161a24"></rect>
+<rect x="920" y="874" width="13" height="13" rx="1.5" fill="#161a24"></rect>
 <g font-size="10.5px" fill="#6f7a90">
 <text x="48" y="837">Mon</text><text x="48" y="869">Wed</text><text x="48" y="901">Fri</text>
 </g>
@@ -644,12 +645,8 @@ text, tspan { white-space: pre; }
 <rect x="14" y="1490" width="957" height="458" fill="url(#net)" opacity="0.5"></rect>
 <rect x="36" y="1510" width="10" height="10" fill="#e0403a"></rect>
 <text x="54" y="1520" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="19px" fill="#efe6d5" letter-spacing="1.6">ACTIVITY LOG</text>
-<text x="949" y="1520" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">SEP 2026</text>
+<text x="949" y="1520" text-anchor="end" font-size="10.5px" fill="#6f7a90" letter-spacing="1.2">OCT 2026</text>
 <line x1="48" y1="1544" x2="48" y2="1930" stroke="#2a3242" stroke-width="1" stroke-dasharray="4 4"></line>
 
-<path d="M48 1552 L54 1558 L48 1564 L42 1558 Z" fill="#e0403a"></path>
-<text x="72" y="1564" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="16px" fill="#efe6d5" letter-spacing="0.8">CREATED 1 REPOSITORY</text>
-<text x="72" y="1590" font-size="13px" fill="#e4e1d8">cine-check</text>
-<text x="380" y="1590" font-size="12px" fill="#6f7a90">public // Python</text>
-<text x="949" y="1590" text-anchor="end" font-size="12px" fill="#6f7a90">SEP 24</text>
+<text x="72" y="1584" font-size="13px" fill="#8a93a6">No public activity this month.</text>
 </svg>
